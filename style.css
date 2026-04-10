@@ -33,7 +33,7 @@ main {
   background-color: #003c66; /* Dark blue background */
   color: #ffffff; /* White text for contrast */
   padding: 10px 50px;
-  height: 100px; /* Adjust to match proportions */
+  height: 130px; /* Adjust to match proportions */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -132,7 +132,7 @@ main {
 
 /* Logo Image */
 .logo img {
-  height: 70px; /* Increase the logo height for visibility */
+  height: 120px; /* Increase the logo height for visibility */
   width: auto; /* Maintain aspect ratio */
   object-fit: contain; /* Prevent distortion */
   transition: transform 0.5s ease; /* Smooth effect for animation */
