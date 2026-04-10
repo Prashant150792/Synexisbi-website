@@ -1,0 +1,58 @@
+<svg width="680" height="320" viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Synexis BI Solutions logo</title>
+  <desc>Synexis BI Solutions logo with light blue shield, visible white tablet shapes, and blue-purple wordmark</desc>
+
+  <!-- Shield body - light blue -->
+  <path d="M340 52 L390 72 L390 148 Q390 190 340 210 Q290 190 290 148 L290 72 Z"
+        fill="#85B7EB" stroke="#378ADD" stroke-width="1.5"/>
+
+  <!-- Inner shield subtle highlight -->
+  <path d="M340 66 L378 83 L378 148 Q378 182 340 198 Q302 182 302 148 L302 83 Z"
+        fill="#B5D4F4" opacity="0.45"/>
+
+  <!-- Tablet 1: oval pill, top-left, rotated -->
+  <g transform="translate(318,103) rotate(-35)">
+    <rect x="-18" y="-8" width="36" height="16" rx="8" fill="white" stroke="#378ADD" stroke-width="1.5"/>
+    <line x1="0" y1="-8" x2="0" y2="8" stroke="#378ADD" stroke-width="1.5"/>
+  </g>
+
+  <!-- Tablet 2: round tablet, center -->
+  <g transform="translate(340,131)">
+    <circle cx="0" cy="0" r="12" fill="white" stroke="#378ADD" stroke-width="1.5"/>
+    <line x1="-12" y1="0" x2="12" y2="0" stroke="#378ADD" stroke-width="1.5"/>
+  </g>
+
+  <!-- Tablet 3: oval pill, bottom-right -->
+  <g transform="translate(360,160) rotate(30)">
+    <rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="white" stroke="#378ADD" stroke-width="1.5"/>
+    <line x1="0" y1="-7.5" x2="0" y2="7.5" stroke="#378ADD" stroke-width="1.5"/>
+  </g>
+
+  <!-- Tablet 4: small round, top-right -->
+  <g transform="translate(362,103)">
+    <circle cx="0" cy="0" r="9" fill="white" stroke="#378ADD" stroke-width="1.5"/>
+    <line x1="-9" y1="0" x2="9" y2="0" stroke="#378ADD" stroke-width="1.5"/>
+  </g>
+
+  <!-- Tablet 5: small oval, bottom-left -->
+  <g transform="translate(319,160) rotate(-25)">
+    <rect x="-14" y="-6.5" width="28" height="13" rx="6.5" fill="white" stroke="#378ADD" stroke-width="1.5"/>
+    <line x1="0" y1="-6.5" x2="0" y2="6.5" stroke="#378ADD" stroke-width="1.5"/>
+  </g>
+
+  <!-- SYNEXIS wordmark -->
+  <text x="416" y="122" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="500"
+        fill="#378ADD" letter-spacing="2">SYNEXIS</text>
+
+  <!-- BI Solutions -->
+  <text x="418" y="152" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400"
+        fill="#534AB7" letter-spacing="3">BI SOLUTIONS</text>
+
+  <!-- Rule -->
+  <line x1="418" y1="162" x2="630" y2="162" stroke="#AFA9EC" stroke-width="0.75"/>
+
+  <!-- Micro descriptor -->
+  <text x="418" y="180" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400"
+        fill="#888780" letter-spacing="1">PHARMACOVIGILANCE INTELLIGENCE</text>
+
+</svg>

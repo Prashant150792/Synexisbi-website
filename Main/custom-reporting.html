@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/PVlogo.svg" />
+
+    <title>Custom Reporting | Services</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/PVlogo.svg" alt="Logo" class="logo-img" />
+        </a>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <!-- Dropdown for Services -->
+          <!-- Dropdown for Services -->
+          <li class="dropdown">
+            <a href="javascript:void(0);" id="services-toggle">
+              Services <span class="dropdown-icon">&#9662;</span>
+            </a>
+            <ul class="dropdown-menu" id="services-dropdown">
+              <li>
+                <a href="product-development.html">Product Development</a>
+              </li>
+              <li>
+                <a href="systems-upgrade.html">Systems Upgrade or Migration</a>
+              </li>
+              <li><a href="data-analytics.html">Data Analytics</a></li>
+              <li><a href="data-mining.html">Data Mining</a></li>
+              <li><a href="custom-reporting.html">Custom Reporting</a></li>
+              <li>
+                <a href="vendor-management.html"
+                  >Vendor Management and Oversight</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="#" class="coming-soon">Products</a></li>
+          <li><a href="#" class="coming-soon">News</a></li>
+          <li><a href="#" class="coming-soon">Client Testimonials</a></li>
+          <li><a href="#" class="coming-soon">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </header>
+    <!-- Coming Soon Popup -->
+    <div id="comingSoonModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Coming Soon</h2>
+        <p>We are working on this feature. Stay tuned!</p>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="image-content-section">
+        <div class="container">
+          <!-- Left Side: Image -->
+          <div class="image-container">
+            <img src="images/reporint.jpg" alt="Sample Image" />
+          </div>
+          <!-- Right Side: Content -->
+          <div class="content-container">
+            <h2>Custom Reporting</h2>
+            <p>
+              Focuses on creating innovative solutions to enhance safety and
+              efficiency in pharmacovigilance processes. Key developments
+              include a reconciliation tool for seamless data alignment,
+              rule-based data validation to ensure accuracy, and real-time
+              monitoring dashboards for proactive oversight. Advanced reporting
+              systems and E2B parsers facilitate streamlined data exchange,
+              while NER models enable precise extraction of critical
+              information. Templated data summarization ensures consistency, and
+              real-time alerts for late SAE submissions enhance compliance and
+              responsiveness.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 VertexPV Analytics. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
