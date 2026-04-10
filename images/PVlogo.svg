@@ -1,58 +1,89 @@
-<svg width="680" height="320" viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg">
-  <title>Synexis BI Solutions logo</title>
-  <desc>Synexis BI Solutions logo with light blue shield, visible white tablet shapes, and blue-purple wordmark</desc>
+<svg width="280" height="100" viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="shield-clip">
+      <path d="M50 8 L84 22 L84 66 Q84 88 50 98 Q16 88 16 66 L16 22 Z"/>
+    </clipPath>
+  </defs>
 
-  <!-- Shield body - light blue -->
-  <path d="M340 52 L390 72 L390 148 Q390 190 340 210 Q290 190 290 148 L290 72 Z"
-        fill="#85B7EB" stroke="#378ADD" stroke-width="1.5"/>
+  <!-- Shield body -->
+  <path d="M50 8 L84 22 L84 66 Q84 88 50 98 Q16 88 16 66 L16 22 Z"
+        fill="white" fill-opacity="0.18" stroke="white" stroke-width="1.5"/>
 
-  <!-- Inner shield subtle highlight -->
-  <path d="M340 66 L378 83 L378 148 Q378 182 340 198 Q302 182 302 148 L302 83 Z"
-        fill="#B5D4F4" opacity="0.45"/>
+  <!-- Inner shield -->
+  <path d="M50 16 L76 28 L76 66 Q76 82 50 92 Q24 82 24 66 L24 28 Z"
+        fill="white" fill-opacity="0.10"/>
 
-  <!-- Tablet 1: oval pill, top-left, rotated -->
-  <g transform="translate(318,103) rotate(-35)">
-    <rect x="-18" y="-8" width="36" height="16" rx="8" fill="white" stroke="#378ADD" stroke-width="1.5"/>
-    <line x1="0" y1="-8" x2="0" y2="8" stroke="#378ADD" stroke-width="1.5"/>
-  </g>
+  <!-- Baseline -->
+  <line x1="24" y1="76" x2="76" y2="76" stroke="white" stroke-opacity="0.7" stroke-width="1" clip-path="url(#shield-clip)"/>
 
-  <!-- Tablet 2: round tablet, center -->
-  <g transform="translate(340,131)">
-    <circle cx="0" cy="0" r="12" fill="white" stroke="#378ADD" stroke-width="1.5"/>
-    <line x1="-12" y1="0" x2="12" y2="0" stroke="#378ADD" stroke-width="1.5"/>
-  </g>
+  <!-- Bar 1 -->
+  <rect x="28" y="68" width="8" height="8" fill="white" fill-opacity="0.5" clip-path="url(#shield-clip)">
+    <animate attributeName="height" values="0;8;8" dur="1.2s" begin="0s" fill="freeze"/>
+    <animate attributeName="y" values="76;68;68" dur="1.2s" begin="0s" fill="freeze"/>
+  </rect>
+  <!-- Bar 2 -->
+  <rect x="40" y="60" width="8" height="16" fill="white" fill-opacity="0.7" clip-path="url(#shield-clip)">
+    <animate attributeName="height" values="0;16;16" dur="1.2s" begin="0.2s" fill="freeze"/>
+    <animate attributeName="y" values="76;60;60" dur="1.2s" begin="0.2s" fill="freeze"/>
+  </rect>
+  <!-- Bar 3 -->
+  <rect x="52" y="46" width="8" height="30" fill="white" fill-opacity="0.95" clip-path="url(#shield-clip)">
+    <animate attributeName="height" values="0;30;30" dur="1.2s" begin="0.4s" fill="freeze"/>
+    <animate attributeName="y" values="76;46;46" dur="1.2s" begin="0.4s" fill="freeze"/>
+  </rect>
+  <!-- Bar 4 -->
+  <rect x="64" y="54" width="8" height="22" fill="white" fill-opacity="0.6" clip-path="url(#shield-clip)">
+    <animate attributeName="height" values="0;22;22" dur="1.2s" begin="0.6s" fill="freeze"/>
+    <animate attributeName="y" values="76;54;54" dur="1.2s" begin="0.6s" fill="freeze"/>
+  </rect>
 
-  <!-- Tablet 3: oval pill, bottom-right -->
-  <g transform="translate(360,160) rotate(30)">
-    <rect x="-17" y="-7.5" width="34" height="15" rx="7.5" fill="white" stroke="#378ADD" stroke-width="1.5"/>
-    <line x1="0" y1="-7.5" x2="0" y2="7.5" stroke="#378ADD" stroke-width="1.5"/>
-  </g>
+  <!-- Trend line -->
+  <polyline points="32,66 44,58 56,44 68,52"
+            fill="none" stroke="white" stroke-width="1.5" stroke-opacity="0.9"
+            stroke-linecap="round" stroke-linejoin="round"
+            clip-path="url(#shield-clip)"
+            stroke-dasharray="60" stroke-dashoffset="60">
+    <animate attributeName="stroke-dashoffset" values="60;0" dur="1.2s" begin="0.8s" fill="freeze"/>
+  </polyline>
 
-  <!-- Tablet 4: small round, top-right -->
-  <g transform="translate(362,103)">
-    <circle cx="0" cy="0" r="9" fill="white" stroke="#378ADD" stroke-width="1.5"/>
-    <line x1="-9" y1="0" x2="9" y2="0" stroke="#378ADD" stroke-width="1.5"/>
-  </g>
+  <!-- Trend dots -->
+  <circle cx="32" cy="66" r="2" fill="white" clip-path="url(#shield-clip)" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="0.9s" fill="freeze"/>
+  </circle>
+  <circle cx="44" cy="58" r="2" fill="white" clip-path="url(#shield-clip)" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.0s" fill="freeze"/>
+  </circle>
+  <circle cx="56" cy="44" r="2" fill="white" clip-path="url(#shield-clip)" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.1s" fill="freeze"/>
+  </circle>
+  <circle cx="68" cy="52" r="2" fill="white" clip-path="url(#shield-clip)" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.2s" fill="freeze"/>
+  </circle>
 
-  <!-- Tablet 5: small oval, bottom-left -->
-  <g transform="translate(319,160) rotate(-25)">
-    <rect x="-14" y="-6.5" width="28" height="13" rx="6.5" fill="white" stroke="#378ADD" stroke-width="1.5"/>
-    <line x1="0" y1="-6.5" x2="0" y2="6.5" stroke="#378ADD" stroke-width="1.5"/>
-  </g>
+  <!-- SYNEXIS -->
+  <text x="96" y="46" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700"
+        fill="white" letter-spacing="2" opacity="0">
+    SYNEXIS
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.0s" fill="freeze"/>
+  </text>
 
-  <!-- SYNEXIS wordmark -->
-  <text x="416" y="122" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="500"
-        fill="#378ADD" letter-spacing="2">SYNEXIS</text>
-
-  <!-- BI Solutions -->
-  <text x="418" y="152" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400"
-        fill="#534AB7" letter-spacing="3">BI SOLUTIONS</text>
+  <!-- BI SOLUTIONS -->
+  <text x="98" y="64" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400"
+        fill="white" fill-opacity="0.85" letter-spacing="3" opacity="0">
+    BI SOLUTIONS
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.2s" fill="freeze"/>
+  </text>
 
   <!-- Rule -->
-  <line x1="418" y1="162" x2="630" y2="162" stroke="#AFA9EC" stroke-width="0.75"/>
+  <line x1="98" y1="70" x2="272" y2="70" stroke="white" stroke-opacity="0.4" stroke-width="0.75" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.3s" fill="freeze"/>
+  </line>
 
   <!-- Micro descriptor -->
-  <text x="418" y="180" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400"
-        fill="#888780" letter-spacing="1">PHARMACOVIGILANCE INTELLIGENCE</text>
+  <text x="98" y="82" font-family="Arial, Helvetica, sans-serif" font-size="7.5" font-weight="400"
+        fill="white" fill-opacity="0.6" letter-spacing="1" opacity="0">
+    PHARMACOVIGILANCE INTELLIGENCE
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.4s" fill="freeze"/>
+  </text>
 
 </svg>
