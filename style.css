@@ -74,7 +74,7 @@ main {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #3d7aa8; /* Lighter blue */
+  background: #003c66; /* Lighter blue */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   min-width: 250px;
@@ -230,7 +230,7 @@ main {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #3d7aa8; /* Same as header background */
+    background-color: #003c66; /* Same as header background */
     padding: 10px 0;
     z-index: 1000;
   }
