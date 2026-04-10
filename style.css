@@ -128,12 +128,12 @@ main {
   align-items: center; /* Center logo vertically */
   justify-content: center; /* Align horizontally */
   padding-left: 50px; /* Add space from the left edge */
-  padding-top: 20px; /* Add space from the top edge */
+  padding-top: 40px; /* Add space from the top edge */
 }
 
 /* Logo Image */
 .logo img {
-  height: 180px; /* Increase the logo height for visibility */
+  height: 250px; /* Increase the logo height for visibility */
   width: auto; /* Maintain aspect ratio */
   object-fit: contain; /* Prevent distortion */
   transition: transform 0.5s ease; /* Smooth effect for animation */
