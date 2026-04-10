@@ -137,6 +137,7 @@ main {
   width: auto; /* Maintain aspect ratio */
   object-fit: contain; /* Prevent distortion */
   transition: transform 0.5s ease; /* Smooth effect for animation */
+  filter: brightness(1.5); /* Brighten the logo for better visibility */
 }
 
 /* Bouncy Animation Keyframes */
