@@ -30,7 +30,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3d7aa8; /* Lighter blue background */
+  background-color: #003c66; /* Lighter blue background */
   color: #ffffff; /* White text for contrast */
   padding: 10px 50px;
   height: 130px; /* Adjust to match proportions */
