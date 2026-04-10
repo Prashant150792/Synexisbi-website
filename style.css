@@ -132,7 +132,7 @@ main {
 
 /* Logo Image */
 .logo img {
-  height: 180px; /* Increase the logo height for visibility */
+  height: 300; /* Increase the logo height for visibility */
   width: auto; /* Maintain aspect ratio */
   object-fit: contain; /* Prevent distortion */
   transition: transform 0.5s ease; /* Smooth effect for animation */
