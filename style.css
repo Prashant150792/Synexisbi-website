@@ -30,7 +30,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #003c66; /* Dark blue background */
+  background-color: #3d7aa8; /* Lighter blue background */
   color: #ffffff; /* White text for contrast */
   padding: 10px 50px;
   height: 130px; /* Adjust to match proportions */
@@ -74,7 +74,7 @@ main {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #003c66; /* Gradient */
+  background: #3d7aa8; /* Lighter blue */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   min-width: 250px;
@@ -132,7 +132,7 @@ main {
 
 /* Logo Image */
 .logo img {
-  height: 300; /* Increase the logo height for visibility */
+  height: 120px; /* Increase the logo height for visibility */
   width: auto; /* Maintain aspect ratio */
   object-fit: contain; /* Prevent distortion */
   transition: transform 0.5s ease; /* Smooth effect for animation */
@@ -156,7 +156,7 @@ main {
 }
 
 .logo img.bounce {
-  animation: bounce 2s infinite; /* Bounce animation every 2 seconds infinitely */
+  /* animation removed */
 }
 .nav-list {
   display: flex;
@@ -230,7 +230,7 @@ main {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #003c66; /* Same as header background */
+    background-color: #3d7aa8; /* Same as header background */
     padding: 10px 0;
     z-index: 1000;
   }
