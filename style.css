@@ -128,7 +128,8 @@ main {
   align-items: center; /* Center logo vertically */
   justify-content: center; /* Align horizontally */
   padding-left: 50px; /* Add space from the left edge */
-  padding-top: 10px; /* Add space from the top edge */
+  padding-top: 5px; /* Add space from the top edge */
+  padding-bottom: 5px; /* Add space from the top edge */
 }
 
 /* Logo Image */
