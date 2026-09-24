@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="images/PVlogo.svg" />
 
-    <title>Synexis BI Solutions | Products</title>
+    <title>PV Signal Manager | Synexis BI Solutions</title>
+    <meta
+      name="description"
+      content="PV Signal Manager is a pharmacovigilance signal detection and management platform: ranked disproportionality search, standing rules, automated data loads and an enforced four-stage review with a full audit trail."
+    />
+    <meta property="og:title" content="PV Signal Manager | Synexis BI Solutions" />
+    <meta
+      property="og:description"
+      content="See a pattern. Confirm it's real. Decide what to do about it."
+    />
+    <meta property="og:image" content="https://synexisbi.com/images/pv-signal-manager/tour-poster.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="products.css" />
   </head>
   <body>
     <!-- Header Section -->
@@ -64,169 +75,430 @@
       </div>
     </div>
 
-    <main>
-      <!-- Section Title -->
-      <section class="section-title">
-        <div class="title-container">
-          <div class="line"></div>
-          <h2>Products</h2>
-          <div class="line"></div>
-        </div>
-      </section>
-
-      <!-- Signal Tool -->
-      <section class="product" id="signal-tool">
-        <div class="product-hero">
-          <div class="product-intro">
-            <span class="overline">Signal Tool</span>
-            <h1>FAERS Signal Manager</h1>
-            <p class="tagline">
+    <main class="pv">
+      <!-- Hero -->
+      <section class="pv-hero" id="signal-tool">
+        <div class="pv-blob pv-blob--a" aria-hidden="true"></div>
+        <div class="pv-blob pv-blob--b" aria-hidden="true"></div>
+        <div class="pv-wrap pv-hero__grid">
+          <div class="pv-hero__copy">
+            <span class="pv-chip pv-reveal"><span class="pv-pulse"></span>Signal Tool</span>
+            <h1 class="pv-reveal" style="--d: 0.05s">
+              <span class="pv-gradient-text">PV Signal Manager</span>
+            </h1>
+            <p class="pv-hero__tagline pv-reveal" style="--d: 0.1s">
               See a pattern. Confirm it's real. Decide what to do about it.
             </p>
-            <p>
-              A pharmacovigilance signal detection platform that watches every
-              drug and every side effect reported to the FDA, flags the
-              combinations that stand out, and walks your team through
-              reviewing, confirming, and acting on them &mdash; with a complete
+            <p class="pv-hero__lede pv-reveal" style="--d: 0.15s">
+              A pharmacovigilance signal detection and management platform. It
+              watches every drug and every side effect in your safety data,
+              flags the combinations that stand out, and walks your team through
+              reviewing, confirming and acting on them &mdash; with a complete
               record of who decided what, and when.
             </p>
-            <p>
-              It replaces spreadsheet-based review with a system built for
-              millions of records, automatic quarterly checks, and enforced
-              four-eyes review.
-            </p>
-            <a href="contact.html" class="btn">Schedule a Walkthrough</a>
+            <div class="pv-hero__ctas pv-reveal" style="--d: 0.2s">
+              <a href="contact.html" class="pv-btn pv-btn--primary">
+                Request a Demo
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <button type="button" class="pv-btn pv-btn--ghost" data-open-video>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>
+                Watch the Tour
+              </button>
+            </div>
+            <ul class="pv-checks pv-reveal" style="--d: 0.25s">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
+                FAERS &amp; Argus data
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
+                EMA-aligned thresholds
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
+                Full audit trail
+              </li>
+            </ul>
           </div>
-          <a href="images/signal-tool/search.jpeg" class="product-shot" target="_blank">
-            <img
-              src="images/signal-tool/search.jpeg"
-              alt="FAERS Signal Manager search results ranked by disproportionality"
-            />
-          </a>
-        </div>
 
-        <!-- Key numbers -->
-        <div class="stats">
-          <div class="stat">
-            <strong>12M+</strong>
-            <span>Case reports already loaded</span>
-          </div>
-          <div class="stat">
-            <strong>4</strong>
-            <span>Independent review stages, every signal</span>
-          </div>
-          <div class="stat">
-            <strong>2</strong>
-            <span>Ways a signal can start</span>
-          </div>
-          <div class="stat">
-            <strong>0</strong>
-            <span>Quarters a reviewer has to check by hand</span>
-          </div>
-        </div>
-
-        <!-- Features -->
-        <h3 class="subhead">Key Features</h3>
-        <div class="product-features">
-          <div class="product-feature">
-            <span class="num">01</span>
-            <h4>Ranked drug&ndash;event search</h4>
-            <p>
-              Type-ahead on the real FDA terms, then every drug and side-effect
-              combination on record, ranked so the ones that stand out rise to
-              the top.
-            </p>
-          </div>
-          <div class="product-feature">
-            <span class="num">02</span>
-            <h4>Trend over time</h4>
-            <p>
-              Click any row to see a quarter-by-quarter trend line and tell at a
-              glance whether a pattern is growing or fading.
-            </p>
-          </div>
-          <div class="product-feature">
-            <span class="num">03</span>
-            <h4>Standing watches</h4>
-            <p>
-              Save a search as a rule with plain thresholds. It re-checks itself
-              automatically every quarter and raises a signal when it fires.
-            </p>
-          </div>
-          <div class="product-feature">
-            <span class="num">04</span>
-            <h4>Automatic quarterly data loads</h4>
-            <p>
-              New FDA data is pulled in on its own, tracked end to end, and an
-              interrupted load resumes exactly where it stopped.
-            </p>
-          </div>
-          <div class="product-feature">
-            <span class="num">05</span>
-            <h4>Four-stage review journey</h4>
-            <p>
-              Detection, Validation, Assessment and Action &mdash; the person
-              who clears one stage is never the one who clears the next.
-            </p>
-          </div>
-          <div class="product-feature">
-            <span class="num">06</span>
-            <h4>One list, full audit trail</h4>
-            <p>
-              Every signal lives in one filterable list, with a permanent,
-              time-stamped record of every decision and regulatory follow-up.
-            </p>
+          <div class="pv-hero__media pv-reveal" style="--d: 0.15s">
+            <div class="pv-frame">
+              <div class="pv-frame__bar" aria-hidden="true">
+                <i></i><i></i><i></i>
+                <span class="pv-frame__url">PV Signal Manager</span>
+              </div>
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster="images/pv-signal-manager/tour-poster.jpg"
+                aria-label="Product tour of PV Signal Manager"
+              >
+                <source src="media/pv-signal-manager-tour.mp4" type="video/mp4" />
+              </video>
+              <button type="button" class="pv-video-toggle" aria-label="Pause video">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+              </button>
+            </div>
+            <div class="pv-float pv-float--alert" aria-hidden="true">
+              <span class="pv-float__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+              </span>
+              <div>
+                <strong>New signal detected</strong>
+                <span>Rule R6 fired &middot; 48 cases</span>
+              </div>
+            </div>
+            <div class="pv-float pv-float--ok" aria-hidden="true">
+              <span class="pv-float__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>
+              </span>
+              <div>
+                <strong>Validated</strong>
+                <span>by a second reviewer</span>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- Screenshots -->
-        <h3 class="subhead">Screenshots</h3>
-        <div class="gallery">
-          <figure>
-            <a href="images/signal-tool/trend.jpeg" target="_blank">
-              <img src="images/signal-tool/trend.jpeg" alt="Quarterly trend chart for a drug-event pair" loading="lazy" />
-            </a>
-            <figcaption>Trend of a drug&ndash;event pair over time</figcaption>
-          </figure>
-          <figure>
-            <a href="images/signal-tool/rules.jpeg" target="_blank">
-              <img src="images/signal-tool/rules.jpeg" alt="Rules Builder listing saved watches" loading="lazy" />
-            </a>
-            <figcaption>Every standing watch, in one place</figcaption>
-          </figure>
-          <figure>
-            <a href="images/signal-tool/data-loads.jpeg" target="_blank">
-              <img src="images/signal-tool/data-loads.jpeg" alt="ETL Monitor showing quarterly data loads" loading="lazy" />
-            </a>
-            <figcaption>Quarterly data loads, tracked end to end</figcaption>
-          </figure>
-          <figure>
-            <a href="images/signal-tool/review-workflow.jpeg" target="_blank">
-              <img src="images/signal-tool/review-workflow.jpeg" alt="Signal review at the Validation stage" loading="lazy" />
-            </a>
-            <figcaption>The four-stage review journey</figcaption>
-          </figure>
-          <figure>
-            <a href="images/signal-tool/signal-list.jpeg" target="_blank">
-              <img src="images/signal-tool/signal-list.jpeg" alt="Signal Management list with filters" loading="lazy" />
-            </a>
-            <figcaption>Every signal, in one list</figcaption>
-          </figure>
-          <figure>
-            <a href="images/signal-tool/new-signal.jpeg" target="_blank">
-              <img src="images/signal-tool/new-signal.jpeg" alt="Logging a new signal from a reviewer observation" loading="lazy" />
-            </a>
-            <figcaption>Logging a signal a reviewer noticed</figcaption>
-          </figure>
+      <!-- Key numbers -->
+      <div class="pv-wrap">
+        <div class="pv-stats pv-reveal">
+          <div class="pv-stat">
+            <span class="pv-stat__num" data-count="12" data-suffix="M+">12M+</span>
+            <span class="pv-stat__label">Case reports already loaded</span>
+          </div>
+          <div class="pv-stat">
+            <span class="pv-stat__num" data-count="4">4</span>
+            <span class="pv-stat__label">Independent review stages</span>
+          </div>
+          <div class="pv-stat">
+            <span class="pv-stat__num" data-count="2">2</span>
+            <span class="pv-stat__label">Ways a signal can start</span>
+          </div>
+          <div class="pv-stat">
+            <span class="pv-stat__num" data-count="0">0</span>
+            <span class="pv-stat__label">Quarters checked by hand</span>
+          </div>
         </div>
+      </div>
 
-        <p class="note">
-          Screenshots show the application running against public FDA FAERS
-          data. They illustrate how the product works and are not intended as
-          safety findings about any drug shown.
-        </p>
+      <!-- Review journey -->
+      <section class="pv-section">
+        <div class="pv-wrap">
+          <div class="pv-heading pv-reveal">
+            <span class="pv-eyebrow">The review journey</span>
+            <h2>No signal reaches a decision on one person's say-so</h2>
+            <p>
+              Every signal &mdash; raised by a rule or logged by a reviewer
+              &mdash; moves through four independent stages.
+            </p>
+          </div>
+
+          <div class="pv-reveal" data-tabs data-interval="5000" data-orientation="horizontal">
+            <div class="pv-steps" role="tablist" aria-label="Review stages">
+              <div class="pv-steps__track" aria-hidden="true"><span></span></div>
+              <button type="button" class="pv-step" role="tab" data-tab>
+                <span class="pv-step__dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                </span>
+                <span class="pv-step__title">1. Detection</span>
+                <span class="pv-step__desc">What was found, and how</span>
+              </button>
+              <button type="button" class="pv-step" role="tab" data-tab>
+                <span class="pv-step__dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+                </span>
+                <span class="pv-step__title">2. Validation</span>
+                <span class="pv-step__desc">Is this really a pattern?</span>
+              </button>
+              <button type="button" class="pv-step" role="tab" data-tab>
+                <span class="pv-step__dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+                </span>
+                <span class="pv-step__title">3. Assessment</span>
+                <span class="pv-step__desc">How serious, how likely?</span>
+              </button>
+              <button type="button" class="pv-step" role="tab" data-tab>
+                <span class="pv-step__dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h12l-2 4 2 4H5"/></svg>
+                </span>
+                <span class="pv-step__title">4. Action</span>
+                <span class="pv-step__desc">What happens next?</span>
+              </button>
+            </div>
+
+            <div class="pv-stage">
+              <div class="pv-frame">
+                <div class="pv-frame__bar" aria-hidden="true">
+                  <i></i><i></i><i></i>
+                  <span class="pv-frame__url">PV Signal Manager &middot; Signal review</span>
+                </div>
+                <div class="pv-panels" data-panels>
+                  <a class="pv-zoom" href="images/pv-signal-manager/signal-detection.jpg">
+                    <img src="images/pv-signal-manager/signal-detection.jpg" alt="Detection stage showing the signal identity and detection statistics" loading="lazy" width="1480" height="810" />
+                  </a>
+                  <a class="pv-zoom" href="images/pv-signal-manager/stage-validation.jpg">
+                    <img src="images/pv-signal-manager/stage-validation.jpg" alt="Validation stage with reviewer notes and trend direction" loading="lazy" width="1480" height="805" />
+                  </a>
+                  <a class="pv-zoom" href="images/pv-signal-manager/stage-assessment.jpg">
+                    <img src="images/pv-signal-manager/stage-assessment.jpg" alt="Assessment stage covering causality, severity and benefit-risk" loading="lazy" width="1480" height="805" />
+                  </a>
+                  <a class="pv-zoom" href="images/pv-signal-manager/stage-action.jpg">
+                    <img src="images/pv-signal-manager/stage-action.jpg" alt="Action stage recording regulatory follow-through" loading="lazy" width="1480" height="805" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="pv-callout pv-reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            The person who clears one stage is never the one who clears the next.
+          </p>
+        </div>
+      </section>
+
+      <!-- Product tour -->
+      <section class="pv-section pv-section--paper" id="tour">
+        <div class="pv-wrap">
+          <div class="pv-heading pv-reveal">
+            <span class="pv-eyebrow">Product tour</span>
+            <h2>From first search to a standing watch</h2>
+            <p>Real screens from the running application.</p>
+          </div>
+
+          <div class="pv-tour pv-reveal" data-tabs data-interval="6000" data-orientation="vertical">
+            <div class="pv-tabs" role="tablist" aria-label="Product features">
+              <button type="button" class="pv-tab" role="tab" data-tab>
+                <span class="pv-tab__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                </span>
+                <span class="pv-tab__title">Search and rank</span>
+                <span class="pv-tab__desc">Type a drug or event and pick the exact term on file. Every drug&ndash;event pair comes back with PRR, ROR, &chi;&sup2;, EBGM and EB05, ranked so what stands out rises to the top.</span>
+                <span class="pv-tab__progress"></span>
+              </button>
+              <button type="button" class="pv-tab" role="tab" data-tab>
+                <span class="pv-tab__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg>
+                </span>
+                <span class="pv-tab__title">Trend over time</span>
+                <span class="pv-tab__desc">Open any pair to see its quarter-by-quarter trend against the EMA threshold, so it's clear at a glance whether a pattern is emerging or fading.</span>
+                <span class="pv-tab__progress"></span>
+              </button>
+              <button type="button" class="pv-tab" role="tab" data-tab>
+                <span class="pv-tab__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="currentColor"/><circle cx="15" cy="12" r="2" fill="currentColor"/><circle cx="7" cy="18" r="2" fill="currentColor"/></svg>
+                </span>
+                <span class="pv-tab__title">Standing rules</span>
+                <span class="pv-tab__desc">Turn a search into a rule with plain thresholds. Active rules re-check automatically after every data load and raise a signal when they fire.</span>
+                <span class="pv-tab__progress"></span>
+              </button>
+              <button type="button" class="pv-tab" role="tab" data-tab>
+                <span class="pv-tab__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+                </span>
+                <span class="pv-tab__title">Automated data loads</span>
+                <span class="pv-tab__desc">Each new quarter of data is downloaded and loaded on its own and tracked job by job. An interrupted load resumes exactly where it stopped.</span>
+                <span class="pv-tab__progress"></span>
+              </button>
+              <button type="button" class="pv-tab" role="tab" data-tab>
+                <span class="pv-tab__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h6"/></svg>
+                </span>
+                <span class="pv-tab__title">One signal register</span>
+                <span class="pv-tab__desc">Every signal, wherever it is in the journey, in one list &mdash; filterable by drug, status, priority and suspect role.</span>
+                <span class="pv-tab__progress"></span>
+              </button>
+              <button type="button" class="pv-tab" role="tab" data-tab>
+                <span class="pv-tab__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+                </span>
+                <span class="pv-tab__title">Log what reviewers notice</span>
+                <span class="pv-tab__desc">Not every signal comes from a rule. Reviewers can record an observation from a case narrative or outside report, and it enters the same review journey.</span>
+                <span class="pv-tab__progress"></span>
+              </button>
+            </div>
+
+            <div class="pv-tour__screen">
+              <div class="pv-frame">
+                <div class="pv-frame__bar" aria-hidden="true">
+                  <i></i><i></i><i></i>
+                  <span class="pv-frame__url">PV Signal Manager</span>
+                </div>
+                <div class="pv-panels" data-panels>
+                  <a class="pv-zoom" href="images/pv-signal-manager/search-results.jpg">
+                    <img src="images/pv-signal-manager/search-results.jpg" alt="Search results ranked by disproportionality scores" loading="lazy" width="1480" height="810" />
+                  </a>
+                  <a class="pv-zoom" href="images/pv-signal-manager/trend.jpg">
+                    <img src="images/pv-signal-manager/trend.jpg" alt="Quarterly PRR trend chart for a drug-event pair" loading="lazy" width="1480" height="933" />
+                  </a>
+                  <a class="pv-zoom" href="images/pv-signal-manager/rules.jpg">
+                    <img src="images/pv-signal-manager/rules.jpg" alt="Rules Builder listing active detection rules" loading="lazy" width="1480" height="810" />
+                  </a>
+                  <a class="pv-zoom" href="images/pv-signal-manager/data-loads.jpg">
+                    <img src="images/pv-signal-manager/data-loads.jpg" alt="Data load monitor showing completed quarterly loads" loading="lazy" width="1480" height="810" />
+                  </a>
+                  <a class="pv-zoom" href="images/pv-signal-manager/signal-list.jpg">
+                    <img src="images/pv-signal-manager/signal-list.jpg" alt="Signal register with filters and statuses" loading="lazy" width="1480" height="810" />
+                  </a>
+                  <a class="pv-zoom" href="images/pv-signal-manager/new-signal.jpg">
+                    <img src="images/pv-signal-manager/new-signal.jpg" alt="New signal form" loading="lazy" width="1480" height="810" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Capabilities -->
+      <section class="pv-section">
+        <div class="pv-wrap">
+          <div class="pv-heading pv-reveal">
+            <span class="pv-eyebrow">Capabilities</span>
+            <h2>Built for accountable, repeatable signal management</h2>
+          </div>
+          <div class="pv-features">
+            <div class="pv-feature pv-reveal">
+              <div class="pv-feature__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 16v-4M12 16V8M17 16v-7"/></svg>
+              </div>
+              <h3>Disproportionality statistics</h3>
+              <p>PRR, ROR, &chi;&sup2;, EBGM and EB05 with confidence intervals for every drug&ndash;event pair, cumulative or by quarter.</p>
+            </div>
+            <div class="pv-feature pv-reveal" style="--d: 0.08s">
+              <div class="pv-feature__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+              </div>
+              <h3>Multiple data sources</h3>
+              <p>Public FDA FAERS data alongside your own Argus safety data, with rules scoped to either source.</p>
+            </div>
+            <div class="pv-feature pv-reveal" style="--d: 0.16s">
+              <div class="pv-feature__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+              </div>
+              <h3>Automatic re-checks</h3>
+              <p>Saved rules run every time new data finishes loading, so no quarter depends on someone remembering to look.</p>
+            </div>
+            <div class="pv-feature pv-reveal">
+              <div class="pv-feature__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg>
+              </div>
+              <h3>Enforced four-eyes review</h3>
+              <p>Stage ownership is enforced by the system, not by honor: nobody can approve their own finding.</p>
+            </div>
+            <div class="pv-feature pv-reveal" style="--d: 0.08s">
+              <div class="pv-feature__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              </div>
+              <h3>Complete audit trail</h3>
+              <p>A permanent, time-stamped record of every decision, alongside the regulatory follow-through for each signal.</p>
+            </div>
+            <div class="pv-feature pv-reveal" style="--d: 0.16s">
+              <div class="pv-feature__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg>
+              </div>
+              <h3>Built for millions of records</h3>
+              <p>Paged, sortable results over the full reporting history, and loads that recover from interruptions without starting over.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison -->
+      <section class="pv-section pv-section--paper">
+        <div class="pv-wrap">
+          <div class="pv-heading pv-reveal">
+            <span class="pv-eyebrow">Why teams switch</span>
+            <h2>What changes when the spreadsheet becomes a system</h2>
+          </div>
+          <div class="pv-compare pv-reveal">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col"><span class="sr-only">Task</span></th>
+                  <th scope="col">Spreadsheet-based review</th>
+                  <th scope="col">PV Signal Manager</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Spotting a pattern worth reviewing</th>
+                  <td><span class="pv-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg>Someone has to think to go looking</span></td>
+                  <td><span class="pv-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Checked automatically, every quarter</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Recording who decided what</th>
+                  <td><span class="pv-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg>Email threads and tracked changes</span></td>
+                  <td><span class="pv-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>A permanent, time-stamped record</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Stopping self-approval</th>
+                  <td><span class="pv-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg>Relies on individual discipline</span></td>
+                  <td><span class="pv-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Enforced at every stage</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Tracking regulatory follow-through</th>
+                  <td><span class="pv-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg>A separate document, if one exists</span></td>
+                  <td><span class="pv-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Built into the signal record</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Handling years of reports</th>
+                  <td><span class="pv-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg>Slows down or breaks</span></td>
+                  <td><span class="pv-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Built for millions of records</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Recovering from a failed data load</th>
+                  <td><span class="pv-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg>Start over from scratch</span></td>
+                  <td><span class="pv-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Resumes where it left off</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to action -->
+      <section class="pv-section">
+        <div class="pv-wrap">
+          <div class="pv-cta pv-reveal">
+            <h2>See it on your own products</h2>
+            <p>
+              A working session on your priority products takes under an hour
+              to set up.
+            </p>
+            <a href="contact.html" class="pv-btn pv-btn--light">
+              Schedule a Walkthrough
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+          <p class="pv-note">
+            Screens show the application running against public FDA FAERS data.
+            They illustrate how the product works and are not safety findings
+            about any drug shown.
+          </p>
+        </div>
       </section>
     </main>
+
+    <!-- Screenshot lightbox -->
+    <div class="pv-overlay" id="pv-lightbox" role="dialog" aria-modal="true" aria-label="Screenshot">
+      <button type="button" class="pv-overlay__close" aria-label="Close">&times;</button>
+      <img src="" alt="" />
+    </div>
+
+    <!-- Tour video -->
+    <div class="pv-overlay" id="pv-video-modal" role="dialog" aria-modal="true" aria-label="Product tour video">
+      <button type="button" class="pv-overlay__close" aria-label="Close">&times;</button>
+      <video controls playsinline preload="none" poster="images/pv-signal-manager/tour-poster.jpg">
+        <source src="media/pv-signal-manager-tour.mp4" type="video/mp4" />
+      </video>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -237,5 +509,6 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script src="products.js"></script>
   </body>
 </html>
