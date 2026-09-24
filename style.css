@@ -1,3 +1,19 @@
+/* Look and feel mirrors the Signal app design system (docs/DESIGN.md):
+   Inter type, light blue surfaces, black text, one blue accent. */
+:root {
+  --primary: #1a56db;
+  --primary-dark: #1440a0;
+  --bg: #e0f2fe;
+  --paper: #f0f9ff;
+  --border: #bae6fd;
+  --text: #000000;
+  --muted: #64748b;
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-raised: 0 4px 12px rgba(26, 86, 219, 0.12);
+  --font: "Inter", "Roboto", sans-serif;
+}
+
 /* Global Reset */
 * {
   margin: 0;
@@ -7,79 +23,128 @@
 
 html,
 body {
-  height: 100%; /* Full viewport height */
-  margin: 0; /* Remove any default margin */
+  height: 100%;
+  margin: 0;
 }
 
-/* Make body a flex container */
+/* Make body a flex container so the footer stays at the bottom */
 body {
   display: flex;
   flex-direction: column;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: var(--font);
+  font-size: 15px;
   line-height: 1.6;
-  color: #333;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Main content will expand to push the footer down */
 main {
-  flex: 1; /* Take up all available space */
+  flex: 1;
 }
 
-/* General Header Styling */
+/* Header — styled like the app's top bar */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #003c66; /* Lighter blue background */
-  color: #ffffff; /* White text for contrast */
-  padding: 10px 50px;
-  height: 130px; /* Adjust to match proportions */
+  background-color: var(--paper);
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  height: 72px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-/* Dropdown Menu Styling */
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
+/* The logo artwork is white; tint it to the primary blue for the light header */
+.logo img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(25%) sepia(94%) saturate(2560%)
+    hue-rotate(216deg) brightness(90%) contrast(92%);
+}
+
+/* Navigation — styled like the app's sidebar nav items */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-list a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-list a:hover {
+  background-color: var(--bg);
+}
+
+.nav-list a.active {
+  background-color: var(--border);
+  color: var(--primary);
+}
+
+/* Dropdown */
 .dropdown {
   position: relative;
 }
 
 .dropdown > a {
-  display: inline-flex;
-  align-items: center;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  gap: 5px; /* Space between text and dropdown icon */
+  gap: 4px;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
-.dropdown > a:hover {
-  text-decoration: underline; /* Adds an underline for hover and active states */
-}
-
-/* Dropdown Icon */
 .dropdown-icon {
-  font-size: 0.8rem;
-  transition: transform 0.3s ease;
+  font-size: 0.75rem;
+  color: var(--muted);
+  transition: transform 0.15s ease;
 }
 
 .dropdown:hover .dropdown-icon {
   transform: rotate(180deg);
 }
 
-/* Dropdown Menu */
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 6px);
   left: 0;
-  background: #003c66; /* Lighter blue */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  min-width: 250px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  min-width: 260px;
   z-index: 1000;
-  padding: 10px 0;
+  padding: 6px;
 }
 
 .dropdown-menu li {
@@ -88,201 +153,120 @@ main {
 
 .dropdown-menu a {
   display: block;
-  padding: 8px 15px; /* Smaller padding */
-  color: #fff;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 8px 12px;
+  color: var(--text);
   text-decoration: none;
-  font-size: 0.9rem; /* Smaller font size */
+  font-size: 13px;
   font-weight: 500;
-  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 6px;
 }
 
 .dropdown-menu a:hover {
-  background: #7ec8e3; /* Highlight background */
-  color: #333; /* Dark text for contrast */
-  border-radius: 5px; /* Rounded corners on hover */
+  background: var(--bg);
+  color: var(--primary);
 }
 
-/* Show Dropdown on Click */
 .dropdown-menu.show {
   display: block;
 }
 
-/* Responsive: Adjust dropdown for smaller screens */
-@media (max-width: 768px) {
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background: #7ec8e3; /* Solid background for smaller screens */
-    border-radius: 0;
-  }
-
-  .dropdown-menu a {
-    font-size: 1rem; /* Slightly larger text for small screens */
-  }
-}
-
-/* Logo Container */
-.logo {
-  display: flex;
-  align-items: center; /* Center logo vertically */
-  justify-content: center; /* Align horizontally */
-  padding-left: 50px; /* Add space from the left edge */
-  padding-top: 5px; /* Add space from the top edge */
-  padding-bottom: 5px; /* Add space from the top edge */
-}
-
-/* Logo Image */
-.logo img {
-  height: 120px; /* Increase the logo height for visibility */
-  width: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Prevent distortion */
-  transition: transform 0.5s ease; /* Smooth effect for animation */
-  filter: brightness(1.15); /* Brighten the logo for better visibility */
-}
-
-/* Bouncy Animation Keyframes */
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0); /* At these points, logo stays in place */
-  }
-  40% {
-    transform: translateY(-20px); /* Bounce upward */
-  }
-  60% {
-    transform: translateY(-10px); /* Smaller bounce upward */
-  }
-}
-
-.logo img.bounce {
-  /* animation removed */
-}
-.nav-list {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-.nav-list a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.nav-list a:hover,
-.nav-list a.active {
-  text-decoration: underline; /* Adds an underline for hover and active states */
-}
-
-/* Hamburger Menu */
+/* Hamburger */
 .hamburger {
-  display: none; /* Hidden by default */
+  display: none;
   flex-direction: column;
   gap: 5px;
+  padding: 10px 8px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius);
   cursor: pointer;
 }
 
+.hamburger:hover {
+  background: var(--bg);
+}
+
 .hamburger .bar {
-  width: 25px;
-  height: 3px;
-  background: #003c66;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
 }
 
-/* Navigation Menu */
-.nav-list {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
+@media (max-width: 900px) {
+  .header {
+    padding: 0 16px;
+  }
 
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.nav-list a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.nav-list a:hover,
-.nav-list a.active {
-  text-decoration: underline; /* Adds an underline for hover and active states */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
   .hamburger {
-    display: flex; /* Show the hamburger menu icon on smaller screens */
+    display: flex;
   }
 
   .nav {
-    display: none; /* Hide navigation by default */
-    flex-direction: column;
-    align-items: center;
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #003c66; /* Same as header background */
-    padding: 10px 0;
+    background-color: var(--paper);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    padding: 8px 16px 12px;
     z-index: 1000;
   }
 
   .nav.active {
-    display: flex; /* Show the navigation when active */
+    display: flex;
   }
 
   .nav-list {
-    flex-direction: column; /* Stack items vertically */
-    gap: 10px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
     width: 100%;
-    align-items: center;
   }
 
   .nav-list a {
     width: 100%;
-    padding: 10px;
-    text-align: center;
-    font-size: 1rem;
-    color: white;
+    padding: 10px 12px;
   }
 
-  .nav-list a:hover {
-    background-color: #003c66; /* Highlight background */
-    color: black; /* Text contrast */
-    border-radius: 5px;
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0 0 0 12px;
+    min-width: 0;
   }
 }
+
 /* Image and Content Section */
 .image-content-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 30px;
-  background: #f8f9fa; /* Light background color */
+  padding: 48px 24px;
 }
 
 .container {
   display: flex;
-  max-width: 1200px;
+  align-items: center;
+  max-width: 1160px;
+  width: 100%;
   margin: 0 auto;
-  flex-wrap: wrap; /* Ensure responsiveness */
-  gap: 70px; /* Spacing between content */
+  flex-wrap: wrap;
+  gap: 48px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
 }
 
-/* Left Side: Image */
 .image-container {
-  flex: 1; /* Takes half the space */
+  flex: 1;
+  min-width: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -290,16 +274,15 @@ main {
 
 .image-container img {
   width: 100%;
-  max-width: 500px; /* Control max width of image */
+  max-width: 520px;
   height: auto;
-  border-radius: 10px; /* Soft corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
 }
 
-/* Right Side: Content */
 .content-container {
-  flex: 1; /* Takes half the space */
-  padding: 20px;
+  flex: 1;
+  min-width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -308,191 +291,207 @@ main {
 
 .content-container h2 {
   font-size: 2rem;
-  color: #003d6a;
-  margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 16px;
 }
 
 .content-container p {
   font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 15px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 12px;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* Stack image and content vertically */
-    text-align: center;
+  .image-content-section {
+    padding: 24px 16px;
   }
 
-  .content-container {
-    text-align: center;
+  .container {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px;
+  }
+
+  .content-container h2 {
+    font-size: 1.6rem;
   }
 }
 
-/* .overlay-text {
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-} */
-/* Section Title Styling */
+/* Section Title — small caps overline style in the accent colour */
 .section-title {
   text-align: center;
-  margin: 40px 0; /* Add space above and below the title section */
+  margin: 24px 0 8px;
 }
 
 .title-container {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Space between the lines and the text */
+  gap: 16px;
 }
 
 .title-container h2 {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-wrap: pretty;
-  font-size: 2rem;
-  font-weight: 600;
-  color: #003c66; /* Title color matching the screenshot */
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
   margin: 0;
 }
 
 .title-container .line {
-  flex: 1; /* Lines expand to fill space */
-  height: 3px; /* Line thickness */
-  background-color: #003c66; /* Line color */
-  max-width: 100px; /* Control line length */
+  flex: 1;
+  height: 2px;
+  background-color: var(--primary);
+  max-width: 64px;
+  border-radius: 2px;
 }
 
 @media (max-width: 768px) {
-  .title-container {
-    gap: 10px; /* Reduce space on smaller screens */
-  }
-
   .title-container h2 {
-    font-size: 1.5rem; /* Smaller font size for mobile */
+    font-size: 1.4rem;
   }
 
   .title-container .line {
-    max-width: 50px; /* Shorter lines for smaller screens */
+    max-width: 40px;
   }
 }
 
-/* Features Section */
-/* Features Section */
+/* Features — cards styled like the app's Paper panels */
 .features {
-  padding: 40px 20px;
-  background: #fff; /* Light background */
+  padding: 24px 24px 56px;
   text-align: center;
 }
+
 .feature-link {
-  text-decoration: none; /* Remove default underline */
+  text-decoration: none;
+  display: block;
 }
 
 .feature-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two cards per row */
-  gap: 50px; /* Spacing between cards */
-  max-width: 1100px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1160px;
   margin: 0 auto;
 }
 
 .feature-item {
-  background: #fff; /* Gradient background */
-  border: 1px solid #7ec8e3; /* Light border */
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
   text-align: left;
 }
 
 .feature-item:hover {
-  transform: translateY(-10px); /* Lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-raised);
 }
 
 .feature-item img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 15px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  margin-bottom: 16px;
   object-fit: contain;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 .feature-item h2 {
-  font-size: 1.2rem;
-  color: #003d6a;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.feature-item:hover h2 {
+  color: var(--primary);
 }
 
 .feature-item p {
-  font-size: 0.95rem;
-  color: black;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.65;
 }
 
-/* Responsive Layout */
 @media (max-width: 768px) {
+  .features {
+    padding: 16px 16px 40px;
+  }
+
   .feature-container {
-    grid-template-columns: 1fr; /* Stack vertically on smaller screens */
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
-/* Modal Background */
+/* Modal — styled like the app's dialogs */
 .modal {
-  display: none; /* Initially hidden */
+  display: none;
   position: fixed;
-  z-index: 1001; /* Above other elements */
+  z-index: 1001;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  background: rgba(15, 23, 42, 0.45);
   justify-content: center;
   align-items: center;
+  padding: 16px;
 }
 
-/* Modal Content Box */
 .modal-content {
-  background: #fff;
-  padding: 20px;
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 32px 24px 24px;
   width: 400px;
+  max-width: 100%;
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  animation: popup 0.3s ease-in-out;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.2);
+  animation: popup 0.2s ease-out;
 }
 
-/* Close Button */
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 1.5rem;
-  color: #333;
+  top: 8px;
+  right: 12px;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--muted);
   cursor: pointer;
 }
 
-/* Heading and Paragraph */
+.close-btn:hover {
+  color: var(--text);
+}
+
 .modal-content h2 {
-  color: #003c66;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
 }
 
 .modal-content p {
-  font-size: 1rem;
-  color: #666;
+  font-size: 0.95rem;
+  color: var(--text);
 }
 
-/* Popup Animation */
 @keyframes popup {
   from {
-    transform: scale(0.8);
+    transform: scale(0.96);
     opacity: 0;
   }
   to {
@@ -500,117 +499,143 @@ main {
     opacity: 1;
   }
 }
+
 /* Contact Section */
 .contact-section {
-  padding: 40px 20px;
+  padding: 48px 24px;
   text-align: center;
-  background: #fff; /* Light background */
 }
 
 .contact-section h1 {
-  font-size: 2.5rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-
-  margin-bottom: 10px;
-  color: #003c66; /* Dark blue */
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  color: var(--text);
 }
 
-.contact-section p {
-  margin-bottom: 30px;
-  color: #555;
+.contact-section > p {
+  margin-bottom: 32px;
+  color: var(--text);
 }
 
 .contact-container {
   display: flex;
-  justify-content: space-around;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-
+  justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 40px;
-  max-width: 1200px;
+  gap: 24px;
+  max-width: 1160px;
   margin: 0 auto;
 }
 
-/* Contact Form */
-.contact-form {
+.contact-form,
+.contact-details {
   flex: 1;
-  max-width: 500px;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: left;
 }
 
-.contact-form h2 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  color: #003c66;
+.contact-form {
+  min-width: 280px;
+  max-width: 560px;
+}
+
+.contact-details {
+  min-width: 260px;
+  max-width: 400px;
+}
+
+.contact-form h2,
+.contact-details h2 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   text-align: left;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  font-size: 13px;
   font-weight: 600;
-  color: #333;
+  color: var(--text);
 }
 
+/* Inputs match the app's outlined text fields */
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
+  padding: 10px 12px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--muted);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: var(--text);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+/* Contained primary button, like the app's MUI buttons */
 .submit-btn {
-  display: inline-block;
-  background: #003c66;
-  color: #fff;
-  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0 22px;
   border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 4px;
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.3s ease;
+  box-shadow: 0 1px 3px rgba(26, 86, 219, 0.3);
+  transition: background 0.15s ease;
 }
 
 .submit-btn:hover {
-  background: #0056b3;
-}
-
-/* Contact Details */
-.contact-details {
-  flex: 1;
-  max-width: 400px;
-  text-align: left;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.contact-details h2 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  color: #003c66;
+  background: var(--primary-dark);
 }
 
 .contact-details p {
   margin-bottom: 10px;
   line-height: 1.6;
-  color: #333;
+  font-size: 0.95rem;
+  color: var(--text);
 }
 
 .contact-details a {
-  color: #003c66;
+  color: var(--primary);
   text-decoration: none;
 }
 
@@ -618,17 +643,12 @@ main {
   text-decoration: underline;
 }
 
-/* Responsive: Stack features vertically on smaller screens */
-@media (max-width: 768px) {
-  .feature-container {
-    grid-template-columns: 1fr; /* One column layout */
-  }
-}
-
 /* Footer */
 .footer {
-  background-color: #003c66;
-  color: #fff;
+  background-color: var(--paper);
+  border-top: 1px solid var(--border);
+  color: var(--text);
   text-align: center;
-  padding: 15px 0;
+  font-size: 13px;
+  padding: 16px;
 }
