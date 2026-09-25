@@ -1,5 +1,5 @@
 // Products page interactions: scroll reveal, stat count-up, auto-advancing
-// tabs (workflow stepper and product tour), screenshot lightbox, video modal.
+// tabs (product tour), screenshot lightbox, video modal.
 document.addEventListener("DOMContentLoaded", () => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const canObserve = "IntersectionObserver" in window;
@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-tabs]").forEach((root) => {
     const tabs = [...root.querySelectorAll("[data-tab]")];
     const panels = [...root.querySelector("[data-panels]").children];
-    const track = root.querySelector(".pv-steps__track span");
     const interval = Number(root.dataset.interval) || 0;
     let current = 0;
     let timer = null;
@@ -98,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
       tabs.forEach((tab, i) => {
         const active = i === current;
         tab.classList.toggle("is-active", active);
-        tab.classList.toggle("is-done", i < current);
         tab.setAttribute("aria-selected", String(active));
         tab.tabIndex = active ? 0 : -1;
       });
@@ -106,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
         panel.classList.toggle("is-active", i === current);
         panel.setAttribute("aria-hidden", String(i !== current));
       });
-      if (track) track.style.width = `${(current / (tabs.length - 1)) * 100}%`;
       restartProgress();
     };
 

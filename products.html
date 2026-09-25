@@ -15,7 +15,7 @@
       property="og:description"
       content="See a pattern. Confirm it's real. Decide what to do about it."
     />
-    <meta property="og:image" content="https://synexisbi.com/images/pv-signal-manager/tour-poster.jpg" />
+    <meta property="og:image" content="https://synexisbi.com/images/pv-signal-manager/tour-poster-v2.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -134,10 +134,10 @@
                 loop
                 playsinline
                 preload="metadata"
-                poster="images/pv-signal-manager/tour-poster.jpg"
+                poster="images/pv-signal-manager/tour-poster-v2.jpg"
                 aria-label="Product tour of PV Signal Manager"
               >
-                <source src="media/pv-signal-manager-tour.mp4" type="video/mp4" />
+                <source src="media/pv-signal-manager-tour-v2.mp4" type="video/mp4" />
               </video>
               <button type="button" class="pv-video-toggle" aria-label="Pause video">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
@@ -187,89 +187,13 @@
         </div>
       </div>
 
-      <!-- Review journey -->
-      <section class="pv-section">
-        <div class="pv-wrap">
-          <div class="pv-heading pv-reveal">
-            <span class="pv-eyebrow">The review journey</span>
-            <h2>No signal reaches a decision on one person's say-so</h2>
-            <p>
-              Every signal &mdash; raised by a rule or logged by a reviewer
-              &mdash; moves through four independent stages.
-            </p>
-          </div>
-
-          <div class="pv-reveal" data-tabs data-interval="5000" data-orientation="horizontal">
-            <div class="pv-steps" role="tablist" aria-label="Review stages">
-              <div class="pv-steps__track" aria-hidden="true"><span></span></div>
-              <button type="button" class="pv-step" role="tab" data-tab>
-                <span class="pv-step__dot">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-                </span>
-                <span class="pv-step__title">1. Detection</span>
-                <span class="pv-step__desc">What was found, and how</span>
-              </button>
-              <button type="button" class="pv-step" role="tab" data-tab>
-                <span class="pv-step__dot">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
-                </span>
-                <span class="pv-step__title">2. Validation</span>
-                <span class="pv-step__desc">Is this really a pattern?</span>
-              </button>
-              <button type="button" class="pv-step" role="tab" data-tab>
-                <span class="pv-step__dot">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
-                </span>
-                <span class="pv-step__title">3. Assessment</span>
-                <span class="pv-step__desc">How serious, how likely?</span>
-              </button>
-              <button type="button" class="pv-step" role="tab" data-tab>
-                <span class="pv-step__dot">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h12l-2 4 2 4H5"/></svg>
-                </span>
-                <span class="pv-step__title">4. Action</span>
-                <span class="pv-step__desc">What happens next?</span>
-              </button>
-            </div>
-
-            <div class="pv-stage">
-              <div class="pv-frame">
-                <div class="pv-frame__bar" aria-hidden="true">
-                  <i></i><i></i><i></i>
-                  <span class="pv-frame__url">PV Signal Manager &middot; Signal review</span>
-                </div>
-                <div class="pv-panels" data-panels>
-                  <a class="pv-zoom" href="images/pv-signal-manager/signal-detection.jpg">
-                    <img src="images/pv-signal-manager/signal-detection.jpg" alt="Detection stage showing the signal identity and detection statistics" loading="lazy" width="1480" height="810" />
-                  </a>
-                  <a class="pv-zoom" href="images/pv-signal-manager/stage-validation.jpg">
-                    <img src="images/pv-signal-manager/stage-validation.jpg" alt="Validation stage with reviewer notes and trend direction" loading="lazy" width="1480" height="805" />
-                  </a>
-                  <a class="pv-zoom" href="images/pv-signal-manager/stage-assessment.jpg">
-                    <img src="images/pv-signal-manager/stage-assessment.jpg" alt="Assessment stage covering causality, severity and benefit-risk" loading="lazy" width="1480" height="805" />
-                  </a>
-                  <a class="pv-zoom" href="images/pv-signal-manager/stage-action.jpg">
-                    <img src="images/pv-signal-manager/stage-action.jpg" alt="Action stage recording regulatory follow-through" loading="lazy" width="1480" height="805" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <p class="pv-callout pv-reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-            The person who clears one stage is never the one who clears the next.
-          </p>
-        </div>
-      </section>
-
       <!-- Product tour -->
       <section class="pv-section pv-section--paper" id="tour">
         <div class="pv-wrap">
           <div class="pv-heading pv-reveal">
             <span class="pv-eyebrow">Product tour</span>
             <h2>From first search to a standing watch</h2>
-            <p>Real screens from the running application.</p>
+            <p>A look inside the application.</p>
           </div>
 
           <div class="pv-tour pv-reveal" data-tabs data-interval="6000" data-orientation="vertical">
@@ -319,7 +243,7 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
                 </span>
                 <span class="pv-tab__title">Log what reviewers notice</span>
-                <span class="pv-tab__desc">Not every signal comes from a rule. Reviewers can record an observation from a case narrative or outside report, and it enters the same review journey.</span>
+                <span class="pv-tab__desc">Not every signal comes from a rule. Reviewers can record an observation from a case narrative or outside report, and it enters the same review workflow.</span>
                 <span class="pv-tab__progress"></span>
               </button>
             </div>
@@ -335,20 +259,65 @@
                     <img src="images/pv-signal-manager/search-results.jpg" alt="Search results ranked by disproportionality scores" loading="lazy" width="1480" height="810" />
                   </a>
                   <a class="pv-zoom" href="images/pv-signal-manager/trend.jpg">
-                    <img src="images/pv-signal-manager/trend.jpg" alt="Quarterly PRR trend chart for a drug-event pair" loading="lazy" width="1480" height="933" />
+                    <img src="images/pv-signal-manager/trend.jpg" alt="Quarterly PRR trend chart for a drug-event pair" loading="lazy" width="1480" height="810" />
                   </a>
-                  <a class="pv-zoom" href="images/pv-signal-manager/rules.jpg">
-                    <img src="images/pv-signal-manager/rules.jpg" alt="Rules Builder listing active detection rules" loading="lazy" width="1480" height="810" />
-                  </a>
+                  <div class="pv-demo pv-rules" role="img" aria-label="Animation: a rule with PRR, chi-squared and case-count thresholds checks each drug-event pair in a newly loaded quarter and raises signals for the pairs that meet it">
+                    <div class="pv-rules__rule">
+                      <span class="pv-rules__label">Rule</span>
+                      <strong class="pv-rules__name">Standard SDR watch</strong>
+                      <span class="pv-rules__scope">Any product &middot; any event</span>
+                      <div class="pv-rules__chips">
+                        <span>PRR &ge; 2</span>
+                        <span>&chi;&sup2; &ge; 4</span>
+                        <span>N &ge; 3</span>
+                      </div>
+                      <span class="pv-rules__status"><i></i>Active &middot; runs after every load</span>
+                    </div>
+                    <div class="pv-rules__flow" aria-hidden="true"><span></span></div>
+                    <div class="pv-rules__eval">
+                      <div class="pv-rules__head">
+                        <span class="pv-rules__spinner"></span>
+                        New quarter loaded &middot; checking pairs
+                      </div>
+                      <div class="pv-rules__row is-hit" style="--i: 0">
+                        <span class="pv-rules__pair">Product A &middot; Rash</span>
+                        <span>PRR 4.8</span><span>&chi;&sup2; 21.3</span><span>N 14</span>
+                        <b class="pv-rules__mark"></b>
+                      </div>
+                      <div class="pv-rules__row" style="--i: 1">
+                        <span class="pv-rules__pair">Product B &middot; Headache</span>
+                        <span>PRR 1.3</span><span>&chi;&sup2; 0.9</span><span>N 41</span>
+                        <b class="pv-rules__mark"></b>
+                      </div>
+                      <div class="pv-rules__row is-hit" style="--i: 2">
+                        <span class="pv-rules__pair">Product C &middot; Hepatitis</span>
+                        <span>PRR 6.2</span><span>&chi;&sup2; 38.5</span><span>N 9</span>
+                        <b class="pv-rules__mark"></b>
+                      </div>
+                      <div class="pv-rules__row" style="--i: 3">
+                        <span class="pv-rules__pair">Product D &middot; Nausea</span>
+                        <span>PRR 2.4</span><span>&chi;&sup2; 5.1</span><span>N 2</span>
+                        <b class="pv-rules__mark"></b>
+                      </div>
+                      <div class="pv-rules__toast">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                        2 new signals raised
+                      </div>
+                    </div>
+                  </div>
                   <a class="pv-zoom" href="images/pv-signal-manager/data-loads.jpg">
                     <img src="images/pv-signal-manager/data-loads.jpg" alt="Data load monitor showing completed quarterly loads" loading="lazy" width="1480" height="810" />
                   </a>
                   <a class="pv-zoom" href="images/pv-signal-manager/signal-list.jpg">
                     <img src="images/pv-signal-manager/signal-list.jpg" alt="Signal register with filters and statuses" loading="lazy" width="1480" height="810" />
                   </a>
-                  <a class="pv-zoom" href="images/pv-signal-manager/new-signal.jpg">
-                    <img src="images/pv-signal-manager/new-signal.jpg" alt="New signal form" loading="lazy" width="1480" height="810" />
-                  </a>
+                  <div class="pv-demo pv-plus" role="img" aria-label="Log a new signal">
+                    <span class="pv-plus__icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                    </span>
+                    <strong>Log a new signal</strong>
+                    <span>Case narrative &middot; literature &middot; outside report</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -495,8 +464,8 @@
     <!-- Tour video -->
     <div class="pv-overlay" id="pv-video-modal" role="dialog" aria-modal="true" aria-label="Product tour video">
       <button type="button" class="pv-overlay__close" aria-label="Close">&times;</button>
-      <video controls playsinline preload="none" poster="images/pv-signal-manager/tour-poster.jpg">
-        <source src="media/pv-signal-manager-tour.mp4" type="video/mp4" />
+      <video controls playsinline preload="none" poster="images/pv-signal-manager/tour-poster-v2.jpg">
+        <source src="media/pv-signal-manager-tour-v2.mp4" type="video/mp4" />
       </video>
     </div>
 
