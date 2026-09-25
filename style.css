@@ -74,13 +74,12 @@ main {
   align-items: center;
 }
 
-/* The logo artwork is white; tint it to the primary blue for the light header */
+/* The logo artwork is white; render it black for the light header */
 .logo img {
   height: 80px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(25%) sepia(94%) saturate(2560%)
-    hue-rotate(216deg) brightness(90%) contrast(92%);
+  filter: brightness(0);
 }
 
 /* Navigation — styled like the app's sidebar nav items */
