@@ -519,42 +519,15 @@ textarea:focus-visible {
   color: var(--ink-soft);
 }
 
-/* Services tree — dark "circuit" panel; edges drawn by script.js */
-.section--dark {
-  position: relative;
-  background: #0b1220;
-  color: #e2e8f0;
-  isolation: isolate;
-  overflow: hidden;
+/* Services tree — sits on the pale tint like the product section;
+   edges are drawn by script.js */
+#services {
   scroll-margin-top: var(--header-h);
 }
 
-.section--dark::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: radial-gradient(rgba(96, 165, 250, 0.16) 1px, transparent 1px);
-  background-size: 24px 24px;
-  -webkit-mask-image: radial-gradient(ellipse at 50% 60%, #000 30%, transparent 80%);
-  mask-image: radial-gradient(ellipse at 50% 60%, #000 30%, transparent 80%);
-}
-
-.section--dark .eyebrow {
-  color: #60a5fa;
-}
-
-.section--dark .section-heading h2 {
-  color: #ffffff;
-}
-
-.section--dark .section-heading p {
-  color: #94a3b8;
-}
-
 .svc-tree {
-  --edge: rgba(96, 165, 250, 0.35);
-  --edge-hot: #60a5fa;
+  --edge: rgba(26, 86, 219, 0.28);
+  --edge-hot: #1a56db;
   position: relative;
   display: grid;
   grid-template-columns: 220px 230px minmax(0, 1fr);
@@ -584,12 +557,12 @@ textarea:focus-visible {
 .svc-tree__edges .pulse {
   fill: none;
   stroke: var(--edge-hot);
-  stroke-width: 2;
+  stroke-width: 2.5;
   stroke-linecap: round;
   stroke-dasharray: 10 400;
   animation: tree-pulse 3.2s linear infinite;
   animation-delay: var(--pd, 0s);
-  filter: drop-shadow(0 0 4px rgba(96, 165, 250, 0.9));
+  filter: drop-shadow(0 0 3px rgba(26, 86, 219, 0.55));
 }
 
 .svc-tree__edges .edge.is-hot {
@@ -598,7 +571,7 @@ textarea:focus-visible {
 }
 
 .svc-tree__edges .port {
-  fill: #0b1220;
+  fill: var(--paper);
   stroke: var(--edge-hot);
   stroke-width: 1.5;
 }
@@ -624,8 +597,7 @@ textarea:focus-visible {
   border-radius: 16px;
   background: linear-gradient(135deg, #1a56db 0%, #1e40af 60%, #0369a1 100%);
   color: #ffffff;
-  box-shadow: 0 0 0 1px rgba(147, 197, 253, 0.35),
-    0 0 48px -8px rgba(59, 130, 246, 0.65);
+  box-shadow: 0 16px 32px -12px rgba(26, 86, 219, 0.55);
 }
 
 .svc-tree__root-icon {
@@ -635,7 +607,7 @@ textarea:focus-visible {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.16);
   flex-shrink: 0;
 }
 
@@ -663,7 +635,7 @@ textarea:focus-visible {
 }
 
 .svc-tree__root-label small {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .svc-tree__branch {
@@ -675,14 +647,15 @@ textarea:focus-visible {
   gap: 12px;
   padding: 14px 16px;
   border-radius: 12px;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(96, 165, 250, 0.4);
-  color: #ffffff;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  color: var(--text);
   font-size: 0.98rem;
 }
 
 .svc-tree__branch small {
-  color: #94a3b8;
+  color: var(--muted);
 }
 
 .svc-tree__num {
@@ -691,8 +664,8 @@ textarea:focus-visible {
   font-weight: 700;
   padding: 4px 7px;
   border-radius: 6px;
-  background: rgba(96, 165, 250, 0.14);
-  color: #93c5fd;
+  background: var(--primary-50);
+  color: var(--primary);
 }
 
 .svc-tree__leaf {
@@ -704,19 +677,18 @@ textarea:focus-visible {
   gap: 14px;
   padding: 16px 18px;
   border-radius: 12px;
-  background: rgba(30, 41, 59, 0.75);
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  color: #e2e8f0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  color: var(--text);
   text-decoration: none;
-  transition: border-color 0.2s ease, background 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .svc-tree__leaf:hover,
 .svc-tree__leaf:focus-visible {
-  border-color: #60a5fa;
-  background: rgba(30, 58, 138, 0.45);
-  box-shadow: 0 0 32px -10px rgba(59, 130, 246, 0.8);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-raised);
 }
 
 .svc-tree__leaf-icon {
@@ -726,9 +698,9 @@ textarea:focus-visible {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(96, 165, 250, 0.12);
-  border: 1px solid rgba(96, 165, 250, 0.3);
-  color: #93c5fd;
+  background: var(--primary-50);
+  border: 1px solid var(--primary-100);
+  color: var(--primary);
   flex-shrink: 0;
 }
 
@@ -744,22 +716,25 @@ textarea:focus-visible {
 
 .svc-tree__leaf-text strong {
   display: block;
-  color: #ffffff;
   font-size: 1rem;
   font-weight: 600;
 }
 
 .svc-tree__leaf-text span {
   font-size: 13.5px;
-  color: #94a3b8;
+  color: var(--ink-soft);
+}
+
+.svc-tree__leaf:hover strong {
+  color: var(--primary);
 }
 
 .svc-tree__go {
   width: 18px;
   height: 18px;
-  color: #60a5fa;
+  color: var(--primary);
   flex-shrink: 0;
-  opacity: 0.5;
+  opacity: 0.45;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -1325,11 +1300,12 @@ textarea:focus-visible {
   }
 }
 
-/* Footer */
+/* Footer — light, on the same pale blue as tinted sections */
 .footer {
   flex-shrink: 0;
-  background: #0f172a;
-  color: #cbd5e1;
+  background: var(--paper);
+  border-top: 1px solid var(--border);
+  color: var(--ink-soft);
   font-size: 14px;
 }
 
@@ -1349,7 +1325,7 @@ textarea:focus-visible {
 
 .footer__brand p {
   max-width: 320px;
-  color: #94a3b8;
+  color: var(--muted);
 }
 
 .footer h2 {
@@ -1358,7 +1334,7 @@ textarea:focus-visible {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--primary);
 }
 
 .footer ul {
@@ -1368,25 +1344,26 @@ textarea:focus-visible {
 }
 
 .footer a {
-  color: #cbd5e1;
+  color: var(--ink-soft);
   text-decoration: none;
+  transition: color 0.15s ease;
 }
 
 .footer a:hover {
-  color: #ffffff;
+  color: var(--primary);
 }
 
 .footer address {
   font-style: normal;
-  color: #94a3b8;
+  color: var(--muted);
 }
 
 .footer__bottom {
   padding: 20px 24px;
-  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  border-top: 1px solid var(--border);
   text-align: center;
   font-size: 13px;
-  color: #94a3b8;
+  color: var(--muted);
 }
 
 /* Responsive */
