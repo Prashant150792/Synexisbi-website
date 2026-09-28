@@ -8,29 +8,75 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.setAttribute("aria-expanded", String(open));
   });
 
-  // Services dropdown: opens on hover (desktop, via CSS) and on click/tap
-  const dropdown = document.querySelector(".dropdown");
-  const servicesToggle = document.getElementById("services-toggle");
+  // Services tree on Home: draw curved edges from each node to its parent
+  const tree = document.querySelector("[data-tree]");
 
-  function setDropdown(open) {
-    dropdown.classList.toggle("open", open);
-    servicesToggle.setAttribute("aria-expanded", String(open));
-  }
+  if (tree) {
+    const svg = tree.querySelector(".svc-tree__edges");
+    const svgNS = "http://www.w3.org/2000/svg";
+    const nodes = {};
+    tree.querySelectorAll("[data-node]").forEach((el) => {
+      nodes[el.dataset.node] = el;
+    });
 
-  servicesToggle.addEventListener("click", () => {
-    setDropdown(!dropdown.classList.contains("open"));
-  });
+    function drawTree() {
+      svg.replaceChildren();
+      if (getComputedStyle(svg).display === "none") return;
 
-  document.addEventListener("click", (event) => {
-    if (!dropdown.contains(event.target)) setDropdown(false);
-  });
+      const box = tree.getBoundingClientRect();
+      let i = 0;
+      tree.querySelectorAll("[data-parent]").forEach((child) => {
+        const parent = nodes[child.dataset.parent];
+        const a = parent.getBoundingClientRect();
+        const b = child.getBoundingClientRect();
+        const x1 = a.right - box.left;
+        const y1 = a.top + a.height / 2 - box.top;
+        const x2 = b.left - box.left;
+        const y2 = b.top + b.height / 2 - box.top;
+        const mid = (x1 + x2) / 2;
+        const d = `M${x1},${y1} C${mid},${y1} ${mid},${y2} ${x2},${y2}`;
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && dropdown.classList.contains("open")) {
-      setDropdown(false);
-      servicesToggle.focus();
+        const edge = document.createElementNS(svgNS, "path");
+        edge.setAttribute("d", d);
+        edge.setAttribute("class", "edge");
+        edge.dataset.to = child.dataset.node;
+
+        const pulse = document.createElementNS(svgNS, "path");
+        pulse.setAttribute("d", d);
+        pulse.setAttribute("class", "pulse");
+        pulse.style.setProperty("--pd", `${(i++ * 0.37) % 3.2}s`);
+
+        const port = document.createElementNS(svgNS, "circle");
+        port.setAttribute("cx", x2);
+        port.setAttribute("cy", y2);
+        port.setAttribute("r", 3.5);
+        port.setAttribute("class", "port");
+
+        svg.append(edge, pulse, port);
+      });
     }
-  });
+
+    // Light up the path from the root to a hovered service
+    function highlight(leaf, on) {
+      let node = leaf;
+      while (node && node.dataset.parent) {
+        const edge = svg.querySelector(`.edge[data-to="${node.dataset.node}"]`);
+        if (edge) edge.classList.toggle("is-hot", on);
+        node = nodes[node.dataset.parent];
+      }
+    }
+
+    tree.querySelectorAll(".svc-tree__leaf").forEach((leaf) => {
+      leaf.addEventListener("mouseenter", () => highlight(leaf, true));
+      leaf.addEventListener("mouseleave", () => highlight(leaf, false));
+      leaf.addEventListener("focus", () => highlight(leaf, true));
+      leaf.addEventListener("blur", () => highlight(leaf, false));
+    });
+
+    drawTree();
+    new ResizeObserver(drawTree).observe(tree);
+    if (document.fonts) document.fonts.ready.then(drawTree);
+  }
 
   // Footer year
   document.querySelectorAll("[data-year]").forEach((el) => {

@@ -22,20 +22,6 @@
       <nav class="nav" id="site-nav" aria-label="Main">
         <ul class="nav-list">
           <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-          <li class="dropdown">
-            <button type="button" class="dropdown-toggle" id="services-toggle" aria-expanded="false" aria-controls="services-dropdown">
-              Services <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <ul class="dropdown-menu" id="services-dropdown">
-              <li><a href="product-development.html">Product Development</a></li>
-              <li><a href="systems-upgrade.html">Systems Upgrade or Migration</a></li>
-              <li><a href="data-analytics.html">Data Analytics</a></li>
-              <li><a href="data-mining.html">Data Mining</a></li>
-              <li><a href="custom-reporting.html">Custom Reporting</a></li>
-              <li><a href="vendor-management.html">Vendor Management and Oversight</a></li>
-              <li class="dropdown-all"><a href="services.html">All services</a></li>
-            </ul>
-          </li>
           <li><a href="products.html">Products</a></li>
           <li><a href="contact.html" class="nav-cta">Contact us</a></li>
         </ul>
@@ -87,53 +73,56 @@
         </div>
       </div>
 
-      <!-- Services -->
-      <section class="section">
+      <!-- Services tree -->
+      <section class="section section--dark" id="services">
         <div class="wrap">
           <div class="section-heading reveal">
             <span class="eyebrow">Services</span>
             <h2>End-to-end support for pharmacovigilance teams</h2>
             <p>
-              From building the tools, to moving the data, to analyzing and
-              reporting on it, and overseeing the vendors who help.
+              Three practice areas, six services: from building the tools and
+              moving the data, to analyzing it, reporting on it and overseeing
+              the vendors who help.
             </p>
           </div>
-        <div class="card-grid">
-          <a href="product-development.html" class="service-card reveal" style="--d: 0.00s">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></span>
-            <h3>Product Development</h3>
-            <p>Reconciliation tools, rule-based validation, monitoring dashboards, E2B parsers and NER models built for PV teams.</p>
-            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="svc-tree reveal" data-tree>
+          <svg class="svc-tree__edges" aria-hidden="true"></svg>
+          <div class="svc-tree__root" data-node="root">
+            <span class="svc-tree__root-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span>
+            <span class="svc-tree__root-label">Synexis BI<small>Pharmacovigilance services</small></span>
+          </div>
+          <div class="svc-tree__branch" data-node="b01" data-parent="root" style="grid-row: 1 / span 2"><span class="svc-tree__num">01</span><span>Build &amp; modernize<small>Tools and platforms</small></span></div>
+          <a href="product-development.html" class="svc-tree__leaf" data-node="product-development" data-parent="b01" style="grid-row: 1">
+            <span class="svc-tree__leaf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></span>
+            <span class="svc-tree__leaf-text"><strong>Product Development</strong><span>Reconciliation, validation, dashboards, E2B parsers and NER</span></span>
+            <svg class="svc-tree__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="systems-upgrade.html" class="service-card reveal" style="--d: 0.06s">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 15 21.84"/><path d="M21 5V8"/><path d="M21 12L18 17H22L19 22"/><path d="M3 12A9 3 0 0 0 14.59 14.87"/></svg></span>
-            <h3>Systems Upgrade or Migration</h3>
-            <p>Upgrade or consolidate safety databases such as ARISg, Argus, LSMV and Veeva Vault with data integrity intact.</p>
-            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <a href="systems-upgrade.html" class="svc-tree__leaf" data-node="systems-upgrade" data-parent="b01" style="grid-row: 2">
+            <span class="svc-tree__leaf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 15 21.84"/><path d="M21 5V8"/><path d="M21 12L18 17H22L19 22"/><path d="M3 12A9 3 0 0 0 14.59 14.87"/></svg></span>
+            <span class="svc-tree__leaf-text"><strong>Systems Upgrade or Migration</strong><span>ARISg, Argus, LSMV to Oracle Argus or Veeva Vault</span></span>
+            <svg class="svc-tree__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="data-analytics.html" class="service-card reveal" style="--d: 0.12s">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
-            <h3>Data Analytics</h3>
-            <p>Analyze ICSRs from healthcare professionals, patients and companies to spot patterns in adverse drug reactions.</p>
-            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="svc-tree__branch" data-node="b02" data-parent="root" style="grid-row: 3 / span 2"><span class="svc-tree__num">02</span><span>Analyze<small>Evidence from safety data</small></span></div>
+          <a href="data-analytics.html" class="svc-tree__leaf" data-node="data-analytics" data-parent="b02" style="grid-row: 3">
+            <span class="svc-tree__leaf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
+            <span class="svc-tree__leaf-text"><strong>Data Analytics</strong><span>ICSR analysis and adverse drug reaction trends</span></span>
+            <svg class="svc-tree__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="data-mining.html" class="service-card reveal" style="--d: 0.00s">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg></span>
-            <h3>Data Mining</h3>
-            <p>Mine spontaneous reporting databases such as FAERS and EudraVigilance to uncover hidden drug–event relationships.</p>
-            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <a href="data-mining.html" class="svc-tree__leaf" data-node="data-mining" data-parent="b02" style="grid-row: 4">
+            <span class="svc-tree__leaf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg></span>
+            <span class="svc-tree__leaf-text"><strong>Data Mining</strong><span>FAERS and EudraVigilance drug–event relationships</span></span>
+            <svg class="svc-tree__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="custom-reporting.html" class="service-card reveal" style="--d: 0.06s">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
-            <h3>Custom Reporting</h3>
-            <p>Trend analyses, product safety summaries and aggregate reports, including PSURs, PADERs, DSURs, CIOMS and MedWatch.</p>
-            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="svc-tree__branch" data-node="b03" data-parent="root" style="grid-row: 5 / span 2"><span class="svc-tree__num">03</span><span>Report &amp; oversee<small>Compliance and governance</small></span></div>
+          <a href="custom-reporting.html" class="svc-tree__leaf" data-node="custom-reporting" data-parent="b03" style="grid-row: 5">
+            <span class="svc-tree__leaf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
+            <span class="svc-tree__leaf-text"><strong>Custom Reporting</strong><span>PSUR, PADER, DSUR, CIOMS and MedWatch</span></span>
+            <svg class="svc-tree__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="vendor-management.html" class="service-card reveal" style="--d: 0.12s">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></span>
-            <h3>Vendor Management and Oversight</h3>
-            <p>Governance, performance monitoring, risk management and training that keep your PV vendors compliant.</p>
-            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <a href="vendor-management.html" class="svc-tree__leaf" data-node="vendor-management" data-parent="b03" style="grid-row: 6">
+            <span class="svc-tree__leaf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></span>
+            <span class="svc-tree__leaf-text"><strong>Vendor Management and Oversight</strong><span>Governance, performance, risk and training</span></span>
+            <svg class="svc-tree__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
         </div>
@@ -216,7 +205,7 @@
           <h2>Company</h2>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">All services</a></li>
+            <li><a href="index.html#services">All services</a></li>
             <li><a href="products.html">PV Signal Manager</a></li>
             <li><a href="contact.html">Contact us</a></li>
           </ul>
