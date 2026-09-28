@@ -3,227 +3,236 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="images/PVlogo.svg" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-    <title>Synexis BI Solutions | Home</title>
+    <title>Synexis BI Solutions | Pharmacovigilance Technology & Services</title>
+    <meta name="description" content="Synexis BI Solutions provides pharmacovigilance product development, safety system migration, data analytics, data mining, custom reporting and vendor oversight." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="theme-light">
     <!-- Header Section -->
     <header class="header">
       <div class="logo">
-        <a href="index.html">
-          <img src="images/PVlogo.svg" alt="Logo" class="logo-img" />
+        <a href="index.html" aria-label="Synexis BI Solutions home">
+          <img src="images/logo-static.svg" alt="Synexis BI Solutions" class="logo-img" width="280" height="100" />
         </a>
       </div>
-      <nav class="nav">
+      <nav class="nav" id="site-nav" aria-label="Main">
         <ul class="nav-list">
-          <li><a href="index.html" class="active">Home</a></li>
-          <!-- Dropdown for Services -->
-          <!-- Dropdown for Services -->
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
           <li class="dropdown">
-            <a href="javascript:void(0);" id="services-toggle">
-              Services <span class="dropdown-icon">&#9662;</span>
-            </a>
+            <button type="button" class="dropdown-toggle" id="services-toggle" aria-expanded="false" aria-controls="services-dropdown">
+              Services <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
             <ul class="dropdown-menu" id="services-dropdown">
-              <li>
-                <a href="product-development.html">Product Development</a>
-              </li>
-              <li>
-                <a href="systems-upgrade.html">Systems Upgrade or Migration</a>
-              </li>
+              <li><a href="product-development.html">Product Development</a></li>
+              <li><a href="systems-upgrade.html">Systems Upgrade or Migration</a></li>
               <li><a href="data-analytics.html">Data Analytics</a></li>
               <li><a href="data-mining.html">Data Mining</a></li>
               <li><a href="custom-reporting.html">Custom Reporting</a></li>
-              <li>
-                <a href="vendor-management.html"
-                  >Vendor Management and Oversight</a
-                >
-              </li>
+              <li><a href="vendor-management.html">Vendor Management and Oversight</a></li>
+              <li class="dropdown-all"><a href="services.html">All services</a></li>
             </ul>
           </li>
-
           <li><a href="products.html">Products</a></li>
-          <li><a href="#" class="coming-soon">News</a></li>
-          <li><a href="#" class="coming-soon">Client Testimonials</a></li>
-          <li><a href="#" class="coming-soon">Careers</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact us</a></li>
         </ul>
       </nav>
-      <button class="hamburger" aria-label="Menu">
+      <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
     </header>
-    <!-- Coming Soon Popup -->
-    <div id="comingSoonModal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Coming Soon</h2>
-        <p>We are working on this feature. Stay tuned!</p>
-      </div>
-    </div>
-    <!-- Main Content -->
+
     <main>
-      <!-- Image and Content Section -->
-      <section class="image-content-section">
-        <div class="container">
-          <!-- Left Side: Image -->
-          <div class="image-container">
-            <img src="images/VertexPVHomepage.jpeg" alt="Sample Image" />
+      <!-- Hero -->
+      <section class="hero">
+        <div class="wrap hero__grid">
+          <div>
+            <span class="eyebrow reveal">Pharmacovigilance technology &amp; services</span>
+            <h1 class="reveal" style="--d: 0.05s">Safety data you can <span>trust and act on</span></h1>
+            <p class="hero__lede reveal" style="--d: 0.1s">
+              Synexis BI Solutions provides innovative pharmacovigilance
+              solutions for global clients, ensuring compliance, safety and
+              performance with tools and services tailored to your needs.
+            </p>
+            <div class="hero__ctas reveal" style="--d: 0.15s">
+              <a href="contact.html" class="btn btn--primary">Talk to us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              <a href="products.html" class="btn btn--ghost">See PV Signal Manager</a>
+            </div>
           </div>
-          <!-- Right Side: Content -->
-          <div class="content-container">
-            <h2>Synexis BI Solutions</h2>
-            <p>
-              We provide innovative pharmacovigilance solutions designed to meet
-              the growing needs of global clients. Our team ensures compliance,
-              safety, and performance with cutting-edge tools and services
-              tailored to your needs.
-            </p>
-            <p>
-              Our mission is to enhance global safety standards through reliable
-              technology and highly skilled professionals who are committed to
-              excellence.
-            </p>
+          <div class="hero__media reveal" style="--d: 0.1s">
+            <img src="images/hero-pv.jpg" alt="Magnifying glass highlighting one capsule among many" width="530" height="709" fetchpriority="high" />
+            <div class="hero__badge">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span>Our mission<small>Enhancing global safety standards</small></span>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Section Title -->
-      <section class="section-title">
-        <div class="title-container">
-          <div class="line"></div>
-          <h2>Services</h2>
-          <div class="line"></div>
+      <!-- Systems strip -->
+      <div class="wrap">
+        <div class="systems reveal">
+          <span class="systems__label">Platforms &amp; data sources we work with</span>
+          <span class="systems__item">Oracle Argus</span>
+          <span class="systems__item">ARISg</span>
+          <span class="systems__item">LSMV</span>
+          <span class="systems__item">Veeva Vault</span>
+          <span class="systems__item">FAERS</span>
+          <span class="systems__item">EudraVigilance</span>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <section class="section">
+        <div class="wrap">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Services</span>
+            <h2>End-to-end support for pharmacovigilance teams</h2>
+            <p>
+              From building the tools, to moving the data, to analyzing and
+              reporting on it, and overseeing the vendors who help.
+            </p>
+          </div>
+        <div class="card-grid">
+          <a href="product-development.html" class="service-card reveal" style="--d: 0.00s">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></span>
+            <h3>Product Development</h3>
+            <p>Reconciliation tools, rule-based validation, monitoring dashboards, E2B parsers and NER models built for PV teams.</p>
+            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a href="systems-upgrade.html" class="service-card reveal" style="--d: 0.06s">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 15 21.84"/><path d="M21 5V8"/><path d="M21 12L18 17H22L19 22"/><path d="M3 12A9 3 0 0 0 14.59 14.87"/></svg></span>
+            <h3>Systems Upgrade or Migration</h3>
+            <p>Upgrade or consolidate safety databases such as ARISg, Argus, LSMV and Veeva Vault with data integrity intact.</p>
+            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a href="data-analytics.html" class="service-card reveal" style="--d: 0.12s">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
+            <h3>Data Analytics</h3>
+            <p>Analyze ICSRs from healthcare professionals, patients and companies to spot patterns in adverse drug reactions.</p>
+            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a href="data-mining.html" class="service-card reveal" style="--d: 0.00s">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg></span>
+            <h3>Data Mining</h3>
+            <p>Mine spontaneous reporting databases such as FAERS and EudraVigilance to uncover hidden drug–event relationships.</p>
+            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a href="custom-reporting.html" class="service-card reveal" style="--d: 0.06s">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
+            <h3>Custom Reporting</h3>
+            <p>Trend analyses, product safety summaries and aggregate reports, including PSURs, PADERs, DSURs, CIOMS and MedWatch.</p>
+            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a href="vendor-management.html" class="service-card reveal" style="--d: 0.12s">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></span>
+            <h3>Vendor Management and Oversight</h3>
+            <p>Governance, performance monitoring, risk management and training that keep your PV vendors compliant.</p>
+            <span class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
         </div>
       </section>
-      <!-- Features Section with Scroll Animations -->
-      <section class="features">
-        <div class="feature-container">
-          <!-- Card 1 -->
-          <a href="product-development.html" class="feature-link">
-            <div class="feature-item scroll-effect">
-              <img
-                src="images/product-development.png"
-                alt="Data Migration Icon"
-              />
-              <h2>Product Development</h2>
-              <p>
-                Focuses on creating innovative solutions to enhance safety and
-                efficiency in pharmacovigilance processes. Key developments
-                include a reconciliation tool for seamless data alignment,
-                rule-based data validation to ensure accuracy, and real-time
-                monitoring dashboards for proactive oversight. Advanced
-                reporting systems and E2B parsers facilitate streamlined data
-                exchange, while NER models enable precise extraction of critical
-                information. Templated data summarization ensures consistency,
-                and real-time alerts for late SAE submissions enhance compliance
-                and responsiveness.
-              </p>
-            </div>
-          </a>
-          <!-- Card 2 -->
-          <a href="systems-upgrade.html" class="feature-link">
-            <div class="feature-item scroll-effect">
-              <img src="images/migration.png" alt="Systems Upgrade Icon" />
-              <h2>Systems Upgrade or Migration</h2>
-              <p>
-                Moving from an older system (e.g., ARISg, Argus, LSMV) to a
-                newer, more advanced pharmacovigilance database (e.g., Oracle
-                Argus, Veeva Vault, etc.): This process ensures the seamless
-                migration of safety data from one system, database, or format to
-                another while maintaining the integrity, completeness, and
-                accuracy of the data. Merge/Acquire Organizations Consolidating
-                safety data from different companies or systems following a
-                merger or acquisition. Compliance with Regulatory Requirements
-                Adopting systems that meet updated regional or global regulatory
-                standards for safety reporting.
-              </p>
-            </div>
-          </a>
 
-          <!-- Card 3 -->
-          <a href="data-analytics.html" class="feature-link">
-            <div class="feature-item scroll-effect">
-              <img src="images/data-analysis.png" alt="Expert Team Icon" />
-              <h2>Data Analytics</h2>
-              <p>
-                Adverse Event Reporting: Analyzing data from adverse event
-                reports (e.g., Individual Case Safety Reports (ICSRs)) submitted
-                by healthcare professionals, patients, and pharmaceutical
-                companies. Identifying patterns and trends in adverse drug
-                reactions (ADRs).
-              </p>
-            </div>
+      <!-- Product teaser -->
+      <section class="section section--tint">
+        <div class="wrap">
+        <div class="split">
+          <div class="reveal">
+            <span class="eyebrow">Our product</span>
+            <h2>PV Signal Manager</h2>
+            <p>
+              A pharmacovigilance signal detection and management platform. See
+              a pattern, confirm it's real, and decide what to do about it.
+            </p>
+            <ul class="check-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Ranked disproportionality search</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Standing rules and automated data loads</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Enforced four-stage review with a full audit trail</li>
+            </ul>
+            <a href="products.html" class="btn btn--primary">Explore PV Signal Manager <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <a href="products.html" class="frame reveal" style="--d: 0.08s" aria-label="PV Signal Manager product tour">
+            <img src="images/pv-signal-manager/tour-poster-v2.jpg" alt="PV Signal Manager signal review screen" width="1280" height="720" loading="lazy" />
           </a>
+        </div>
+        </div>
+      </section>
 
-          <!-- Card 4 -->
-          <a href="data-mining.html" class="feature-link">
-            <div class="feature-item scroll-effect">
-              <img src="images/data-mining.png" alt="Advanced Tools Icon" />
-              <h2>Data Mining</h2>
-              <p>
-                Leveraging large datasets, such as spontaneous reporting
-                databases (e.g., FDA Adverse Event Reporting System (FAERS),
-                EudraVigilance), to uncover hidden relationships between drugs
-                and adverse events.
-              </p>
-            </div>
-          </a>
+      <!-- How we engage -->
+      <section class="section">
+        <div class="wrap">
+          <div class="section-heading reveal">
+            <span class="eyebrow">How we work</span>
+            <h2>A clear path from first call to delivery</h2>
+          </div>
+          <ol class="steps">
+            <li class="reveal"><h3>Discover</h3><p>We learn your products, systems, data and regulatory obligations.</p></li>
+            <li class="reveal" style="--d: 0.06s"><h3>Plan</h3><p>We agree scope, milestones and how success will be measured.</p></li>
+            <li class="reveal" style="--d: 0.12s"><h3>Deliver</h3><p>We build, migrate, analyze or report, with regular check-ins.</p></li>
+            <li class="reveal" style="--d: 0.18s"><h3>Support</h3><p>We stay on hand to maintain, monitor and improve what we delivered.</p></li>
+          </ol>
+        </div>
+      </section>
 
-          <!-- Card 5 -->
-          <a href="custom-reporting.html" class="feature-link">
-            <div class="feature-item scroll-effect">
-              <img
-                src="images/reporting.png"
-                alt="Business Transformation Icon"
-              />
-              <h2>Custom Reporting</h2>
-              <p>
-                Provides comprehensive and tailored insights by including
-                adverse event trend analysis, product-specific safety summaries,
-                in-depth risk-benefit assessments, regulatory-specific
-                documentation, and the preparation of detailed aggregate
-                reports. These reports encompass various formats, such as
-                Periodic Safety Update Reports (PSURs), Periodic Adverse Drug
-                Experience Reports (PADERs), Development Safety Update Reports
-                (DSURs), CIOMS forms, and MedWatch submissions, ensuring
-                compliance with global regulatory requirements and supporting
-                informed decision-making.
-              </p>
-            </div>
-          </a>
-
-          <!-- Card 6 -->
-          <a href="data-analytics.html" class="feature-link">
-            <div class="feature-item scroll-effect">
-              <img src="images/analytics.png" alt="Hosting Solutions Icon" />
-              <h2>Vendor Management and OverSight</h2>
-              <p>
-                Effective collaboration and operational excellence are achieved
-                through robust governance and communication strategies,
-                performance monitoring, and comprehensive contract management.
-                This includes technical oversight, proactive risk management,
-                and the development of business continuity plans to ensure
-                minimal disruptions. Additionally, it emphasizes adherence to
-                regulatory compliance and the facilitation of ongoing training
-                programs to align with organizational objectives and industry
-                standards.
-              </p>
-            </div>
-          </a>
+      <section class="section">
+        <div class="wrap">
+          <div class="cta-band reveal">
+            <h2>Let's talk about your safety data</h2>
+            <p>Tell us what you're working on, whether it's a migration, a reporting backlog or a new tool, and we'll show you how we can help.</p>
+            <a href="contact.html" class="btn btn--light">Contact us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-content">
-        <p>&copy; 2024 Synexis BI Solutions. All rights reserved.</p>
+      <div class="wrap footer__grid">
+        <div class="footer__brand">
+          <img src="images/logo-static.svg" alt="Synexis BI Solutions" width="168" height="60" />
+          <p>
+            Pharmacovigilance technology and services that help enhance global
+            safety standards.
+          </p>
+        </div>
+        <div>
+          <h2>Services</h2>
+          <ul>
+            <li><a href="product-development.html">Product Development</a></li>
+            <li><a href="systems-upgrade.html">Systems Upgrade or Migration</a></li>
+            <li><a href="data-analytics.html">Data Analytics</a></li>
+            <li><a href="data-mining.html">Data Mining</a></li>
+            <li><a href="custom-reporting.html">Custom Reporting</a></li>
+            <li><a href="vendor-management.html">Vendor Management and Oversight</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Company</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">All services</a></li>
+            <li><a href="products.html">PV Signal Manager</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <address>
+            43 Kings Hwy<br />
+            Haddonfield, NJ 08033<br />
+            Mon–Fri, 9AM – 5PM
+          </address>
+          <p style="margin-top: 12px"><a href="contact.html">Send us a message &rarr;</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; <span data-year>2026</span> Synexis BI Solutions. All rights reserved.
       </div>
     </footer>
 

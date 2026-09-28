@@ -3,90 +3,149 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="images/PVlogo.svg" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-    <title>Vendor Management and OverSight | Services</title>
+    <title>Vendor Management and Oversight | Synexis BI Solutions</title>
+    <meta name="description" content="Effective collaboration and operational excellence through robust governance, communication and oversight of your safety vendors." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="theme-light">
     <!-- Header Section -->
     <header class="header">
       <div class="logo">
-        <a href="index.html">
-          <img src="images/PVlogo.svg" alt="Logo" class="logo-img" />
+        <a href="index.html" aria-label="Synexis BI Solutions home">
+          <img src="images/logo-static.svg" alt="Synexis BI Solutions" class="logo-img" width="280" height="100" />
         </a>
       </div>
-      <nav class="nav">
+      <nav class="nav" id="site-nav" aria-label="Main">
         <ul class="nav-list">
-          <li><a href="index.html" class="active">Home</a></li>
-          <!-- Dropdown for Services -->
-          <!-- Dropdown for Services -->
+          <li><a href="index.html">Home</a></li>
           <li class="dropdown">
-            <a href="javascript:void(0);" id="services-toggle">
-              Services <span class="dropdown-icon">&#9662;</span>
-            </a>
+            <button type="button" class="dropdown-toggle active" id="services-toggle" aria-expanded="false" aria-controls="services-dropdown">
+              Services <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
             <ul class="dropdown-menu" id="services-dropdown">
-              <li>
-                <a href="product-development.html">Product Development</a>
-              </li>
-              <li>
-                <a href="systems-upgrade.html">Systems Upgrade or Migration</a>
-              </li>
+              <li><a href="product-development.html">Product Development</a></li>
+              <li><a href="systems-upgrade.html">Systems Upgrade or Migration</a></li>
               <li><a href="data-analytics.html">Data Analytics</a></li>
               <li><a href="data-mining.html">Data Mining</a></li>
               <li><a href="custom-reporting.html">Custom Reporting</a></li>
-              <li>
-                <a href="vendor-management.html"
-                  >Vendor Management and Oversight</a
-                >
-              </li>
+              <li><a href="vendor-management.html" aria-current="page">Vendor Management and Oversight</a></li>
+              <li class="dropdown-all"><a href="services.html">All services</a></li>
             </ul>
           </li>
-
           <li><a href="products.html">Products</a></li>
-          <li><a href="#" class="coming-soon">News</a></li>
-          <li><a href="#" class="coming-soon">Client Testimonials</a></li>
-          <li><a href="#" class="coming-soon">Careers</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact us</a></li>
         </ul>
       </nav>
-      <button class="hamburger" aria-label="Menu">
+      <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
     </header>
-    <!-- Coming Soon Popup -->
-    <div id="comingSoonModal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Coming Soon</h2>
-        <p>We are working on this feature. Stay tuned!</p>
-      </div>
-    </div>
-    <!-- Main Content -->
-    <main class="main-content">
-      <section class="image-content-section">
-        <div class="container">
-          <!-- Left Side: Image -->
-          <div class="image-container">
-            <img src="images/vendormanagement.jpg" alt="Sample Image" />
+
+    <main>
+      <section class="page-hero">
+        <div class="wrap">
+          <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><span aria-current="page">Vendor Management and Oversight</span></li>
+          </ol>
+          <div class="page-hero__grid">
+            <div>
+              <span class="eyebrow">Service</span>
+              <h1>Vendor Management and Oversight</h1>
+              <p class="page-hero__lede">Effective collaboration and operational excellence through robust governance, communication and oversight of your safety vendors.</p>
+              <div class="hero__ctas">
+                <a href="contact.html" class="btn btn--primary">Discuss your project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </div>
+            <div class="page-hero__media">
+              <img src="images/vendormanagement.jpg" alt="" width="1200" height="1200" fetchpriority="high" />
+            </div>
           </div>
-          <!-- Right Side: Content -->
-          <div class="content-container">
-            <h2>Vendor Management and OverSight</h2>
-            <p>
-              Effective collaboration and operational excellence are achieved
-              through robust governance and communication strategies,
-              performance monitoring, and comprehensive contract management.
-              This includes technical oversight, proactive risk management, and
-              the development of business continuity plans to ensure minimal
-              disruptions. Additionally, it emphasizes adherence to regulatory
-              compliance and the facilitation of ongoing training programs to
-              align with organizational objectives and industry standards.
-            </p>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 40px">
+        <div class="wrap">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Vendor Management and Oversight</span>
+            <h2>How we oversee</h2>
+          </div>
+          <div class="capabilities">
+            <div class="capability reveal" style="--d: 0.00s">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></span>
+              <div>
+                <h3>Governance & communication</h3>
+                <p>Clear governance and communication strategies with every vendor.</p>
+              </div>
+            </div>
+            <div class="capability reveal" style="--d: 0.06s">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
+              <div>
+                <h3>Performance monitoring</h3>
+                <p>Ongoing tracking of vendor performance against expectations.</p>
+              </div>
+            </div>
+            <div class="capability reveal" style="--d: 0.12s">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
+              <div>
+                <h3>Contract management</h3>
+                <p>Comprehensive management of vendor contracts.</p>
+              </div>
+            </div>
+            <div class="capability reveal" style="--d: 0.00s">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg></span>
+              <div>
+                <h3>Technical oversight</h3>
+                <p>Hands-on oversight of the technical work your vendors deliver.</p>
+              </div>
+            </div>
+            <div class="capability reveal" style="--d: 0.06s">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <div>
+                <h3>Risk & business continuity</h3>
+                <p>Proactive risk management and continuity plans to minimize disruption.</p>
+              </div>
+            </div>
+            <div class="capability reveal" style="--d: 0.12s">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span>
+              <div>
+                <h3>Compliance & training</h3>
+                <p>Adherence to regulatory requirements and ongoing training programs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tint">
+        <div class="wrap">
+          <div class="section-heading section-heading--left reveal">
+            <span class="eyebrow">Explore more</span>
+            <h2>Related services</h2>
+          </div>
+          <div class="related">
+          <a href="product-development.html"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></span> Product Development</a>
+          <a href="systems-upgrade.html"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 15 21.84"/><path d="M21 5V8"/><path d="M21 12L18 17H22L19 22"/><path d="M3 12A9 3 0 0 0 14.59 14.87"/></svg></span> Systems Upgrade or Migration</a>
+          <a href="data-analytics.html"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span> Data Analytics</a>
+          <a href="data-mining.html"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg></span> Data Mining</a>
+          <a href="custom-reporting.html"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span> Custom Reporting</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="cta-band reveal">
+            <h2>Talk to us about vendor management and oversight</h2>
+            <p>Share a little about your products, systems and timelines and we'll get back to you.</p>
+            <a href="contact.html" class="btn btn--light">Contact us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
       </section>
@@ -94,8 +153,46 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-content">
-        <p>&copy; 2024 Synexis BI Solutions. All rights reserved.</p>
+      <div class="wrap footer__grid">
+        <div class="footer__brand">
+          <img src="images/logo-static.svg" alt="Synexis BI Solutions" width="168" height="60" />
+          <p>
+            Pharmacovigilance technology and services that help enhance global
+            safety standards.
+          </p>
+        </div>
+        <div>
+          <h2>Services</h2>
+          <ul>
+            <li><a href="product-development.html">Product Development</a></li>
+            <li><a href="systems-upgrade.html">Systems Upgrade or Migration</a></li>
+            <li><a href="data-analytics.html">Data Analytics</a></li>
+            <li><a href="data-mining.html">Data Mining</a></li>
+            <li><a href="custom-reporting.html">Custom Reporting</a></li>
+            <li><a href="vendor-management.html">Vendor Management and Oversight</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Company</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">All services</a></li>
+            <li><a href="products.html">PV Signal Manager</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <address>
+            43 Kings Hwy<br />
+            Haddonfield, NJ 08033<br />
+            Mon–Fri, 9AM – 5PM
+          </address>
+          <p style="margin-top: 12px"><a href="contact.html">Send us a message &rarr;</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; <span data-year>2026</span> Synexis BI Solutions. All rights reserved.
       </div>
     </footer>
 

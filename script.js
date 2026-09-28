@@ -1,136 +1,116 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Hamburger Menu
+  // Mobile menu
   const hamburger = document.querySelector(".hamburger");
   const nav = document.querySelector(".nav");
 
   hamburger.addEventListener("click", () => {
-    nav.classList.toggle("active");
+    const open = nav.classList.toggle("active");
+    hamburger.setAttribute("aria-expanded", String(open));
   });
 
-  // Logo Rotation
-  const logo = document.querySelector(".logo-img"); // Select the logo image
-
-  // Add 'bounce' class to start the bounce animation every 5 seconds
-  setInterval(() => {
-    logo.classList.toggle("bounce");
-  }, 5000);
-  // Select the Services toggle link and dropdown menu
+  // Services dropdown: opens on hover (desktop, via CSS) and on click/tap
+  const dropdown = document.querySelector(".dropdown");
   const servicesToggle = document.getElementById("services-toggle");
-  const servicesDropdown = document.getElementById("services-dropdown");
 
-  // Toggle dropdown visibility
-  servicesToggle.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent default link behavior
-    servicesDropdown.style.display =
-      servicesDropdown.style.display === "block" ? "none" : "block";
+  function setDropdown(open) {
+    dropdown.classList.toggle("open", open);
+    servicesToggle.setAttribute("aria-expanded", String(open));
+  }
+
+  servicesToggle.addEventListener("click", () => {
+    setDropdown(!dropdown.classList.contains("open"));
   });
 
-  // Optional: Close the dropdown if clicking outside of it
   document.addEventListener("click", (event) => {
-    if (
-      !servicesToggle.contains(event.target) &&
-      !servicesDropdown.contains(event.target)
-    ) {
-      servicesDropdown.style.display = "none";
+    if (!dropdown.contains(event.target)) setDropdown(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && dropdown.classList.contains("open")) {
+      setDropdown(false);
+      servicesToggle.focus();
     }
   });
 
-  // Handle clicks on dropdown links for redirection
-  const dropdownLinks = servicesDropdown.querySelectorAll("a");
-  dropdownLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const targetUrl = link.getAttribute("href"); // Get the target page link
-      window.location.href = targetUrl; // Redirect to the page
-    });
-  });
-  // Select all links with 'coming-soon' class
-  const comingSoonLinks = document.querySelectorAll(".coming-soon");
-  const modal = document.getElementById("comingSoonModal");
-  const closeBtn = document.querySelector(".close-btn");
-
-  // Add click event to each 'coming-soon' link
-  comingSoonLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevent default link behavior
-      modal.style.display = "flex"; // Show the modal
-    });
+  // Footer year
+  document.querySelectorAll("[data-year]").forEach((el) => {
+    el.textContent = new Date().getFullYear();
   });
 
-  // Close the modal when the close button is clicked
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
+  // Scroll reveal
+  const revealItems = document.querySelectorAll(".reveal");
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
-  // Close the modal when clicking outside the modal content
-  window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-
-  // Carousel
-  const carouselItems = document.querySelectorAll(".carousel-item");
-  let currentIndex = 0;
-
-  function showSlide(index) {
-    const totalItems = carouselItems.length;
-    carouselItems.forEach((item, i) => {
-      item.style.display = i === index ? "block" : "none";
-    });
-    currentIndex = index % totalItems; // Ensure looping
+  if (revealItems.length && "IntersectionObserver" in window && !reduceMotion) {
+    document.documentElement.classList.add("js-reveal");
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.1 }
+    );
+    revealItems.forEach((el) => revealObserver.observe(el));
   }
 
-  // Auto-slide every 8 seconds
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % carouselItems.length;
-    showSlide(currentIndex);
-  }, 8000);
-
-  // Show the first slide initially
-  showSlide(currentIndex);
-
-  // Scroll Effect for Features Section
-  const scrollItems = document.querySelectorAll(".scroll-effect");
-
-  function checkScroll() {
-    scrollItems.forEach((item) => {
-      const rect = item.getBoundingClientRect();
-      // Add 'show' class when the item is in the viewport
-      if (rect.top < window.innerHeight - 100) {
-        item.classList.add("show");
-      }
-    });
-  }
-
-  // Trigger the scroll effect on load and scroll
-  window.addEventListener("scroll", checkScroll);
-  checkScroll(); // Run once on page load
-
-  // Contact Us Form Submission
+  // Contact form: posts to the form service set in data-endpoint
+  // (e.g. https://formspree.io/f/xxxxxxx). GitHub Pages can't run PHP.
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault(); // Prevent the form from submitting normally
+    const status = document.getElementById("formStatus");
+    const submitBtn = contactForm.querySelector("button[type=submit]");
 
-      // Get form values
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
+    function showStatus(kind, message) {
+      status.className = "form-status is-" + kind;
+      status.textContent = message;
+    }
 
-      // Form Validation
-      if (!name || !email || !message) {
-        alert("Please fill out all fields before submitting.");
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) return;
+
+      const endpoint = contactForm.dataset.endpoint;
+      if (!endpoint) {
+        showStatus(
+          "error",
+          "Online messages aren't available just yet. Please email us using the address on this page."
+        );
         return;
       }
 
-      // Show success message (replace with backend submission if needed)
-      alert(
-        "Thank you, " + name + "! Your message has been sent successfully."
-      );
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
 
-      // Reset the form fields
-      contactForm.reset();
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" },
+        });
+        if (!response.ok) throw new Error(response.statusText);
+
+        const name = contactForm.elements.name.value.trim();
+        contactForm.reset();
+        showStatus(
+          "success",
+          "Thank you" + (name ? ", " + name : "") + ". Your message has been sent and we'll be in touch soon."
+        );
+      } catch (error) {
+        showStatus(
+          "error",
+          "Sorry, your message couldn't be sent. Please try again or email us directly."
+        );
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send message";
+      }
     });
   }
 });
