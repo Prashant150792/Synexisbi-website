@@ -22,10 +22,9 @@
   padding: 88px 0;
 }
 
+/* Alternating sections share the site-wide white background */
 .pv-section--paper {
-  background: var(--paper);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .pv-eyebrow {
@@ -143,6 +142,8 @@
 }
 
 .pv-blob {
+  /* Hidden: the page background is plain white site-wide */
+  display: none;
   position: absolute;
   z-index: -1;
   border-radius: 50%;
