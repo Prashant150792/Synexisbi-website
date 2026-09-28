@@ -99,12 +99,17 @@ textarea:focus-visible {
   align-items: center;
 }
 
-/* The logo artwork is white; render it black for the light header */
+/* Full-colour header logo; lifts slightly on hover */
 .logo img {
   height: 64px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.logo a:hover img {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 6px 12px rgba(26, 86, 219, 0.22));
 }
 
 /* Navigation — styled like the app's sidebar nav items */

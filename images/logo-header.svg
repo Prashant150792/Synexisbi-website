@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="252" height="100" viewBox="0 0 252 100">
+  <!-- Full-colour logo for the light header (footer keeps the white logo-static.svg) -->
+  <defs>
+    <linearGradient id="shield-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b82f6" />
+      <stop offset="0.55" stop-color="#1a56db" />
+      <stop offset="1" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1a56db" />
+      <stop offset="1" stop-color="#1a56db" stop-opacity="0" />
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-30%" width="180%" height="170%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1a56db" flood-opacity="0.35" />
+    </filter>
+    <clipPath id="shield-clip">
+      <path d="M50 8 L84 22 L84 66 Q84 88 50 98 Q16 88 16 66 L16 22 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Shield -->
+  <path d="M50 8 L84 22 L84 66 Q84 88 50 98 Q16 88 16 66 L16 22 Z" fill="url(#shield-fill)" filter="url(#glow)" />
+  <path d="M50 16 L76 28 L76 66 Q76 82 50 92 Q24 82 24 66 L24 28 Z" fill="white" fill-opacity="0.1" />
+
+  <!-- Chart -->
+  <line x1="24" y1="76" x2="76" y2="76" stroke="white" stroke-opacity="0.7" stroke-width="1" clip-path="url(#shield-clip)" />
+  <rect x="28" y="68" width="8" height="8" rx="1" fill="white" fill-opacity="0.55" clip-path="url(#shield-clip)" />
+  <rect x="40" y="60" width="8" height="16" rx="1" fill="white" fill-opacity="0.75" clip-path="url(#shield-clip)" />
+  <rect x="52" y="46" width="8" height="30" rx="1" fill="white" clip-path="url(#shield-clip)" />
+  <rect x="64" y="54" width="8" height="22" rx="1" fill="white" fill-opacity="0.65" clip-path="url(#shield-clip)" />
+  <polyline points="32,66 44,58 56,44 68,52" fill="none" stroke="#bfdbfe" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="32" cy="66" r="2" fill="white" />
+  <circle cx="44" cy="58" r="2" fill="white" />
+  <circle cx="56" cy="44" r="2.4" fill="white" />
+  <circle cx="68" cy="52" r="2" fill="white" />
+
+  <!-- Wordmark -->
+  <text x="98" y="50" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="27" font-weight="800" fill="#0f172a" letter-spacing="1.5">SYNEXIS</text>
+  <rect x="99" y="58" width="140" height="1.5" fill="url(#rule)" />
+  <text x="99" y="75" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1a56db" letter-spacing="3.6">BI SOLUTIONS</text>
+</svg>
