@@ -253,10 +253,9 @@ textarea:focus-visible {
   padding: 88px 0;
 }
 
+/* Tinted sections now share the plain white of the rest of the page */
 .section--tint {
-  background: var(--paper);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .eyebrow {
@@ -571,7 +570,7 @@ textarea:focus-visible {
 }
 
 .svc-tree__edges .port {
-  fill: var(--paper);
+  fill: var(--surface);
   stroke: var(--edge-hot);
   stroke-width: 1.5;
 }
@@ -943,14 +942,6 @@ textarea:focus-visible {
   position: relative;
   padding: 40px 0 72px;
   isolation: isolate;
-}
-
-.page-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(180deg, var(--paper) 0%, #ffffff 100%);
 }
 
 .breadcrumb {
