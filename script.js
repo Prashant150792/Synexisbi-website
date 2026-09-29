@@ -105,69 +105,19 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach((el) => revealObserver.observe(el));
   }
 
-  // Contact form: posts JSON to the FormSubmit endpoint in data-endpoint,
-  // which emails the inquiry to contactus@synexisbi.com.
-  const contactForm = document.getElementById("contactForm");
-
-  if (contactForm) {
-    const status = document.getElementById("formStatus");
-    const submitBtn = contactForm.querySelector("button[type=submit]");
-
-    function showStatus(kind, message) {
-      status.className = "form-status is-" + kind;
-      status.textContent = message;
-    }
-
-    contactForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      if (!contactForm.reportValidity()) return;
-
-      const endpoint = contactForm.dataset.endpoint;
-      if (!endpoint) {
-        showStatus(
-          "error",
-          "Online messages aren't available just yet. Please email us at contactus@synexisbi.com."
-        );
-        return;
-      }
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending…";
-
+  // Contact page: copy the email address to the clipboard
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    const label = btn.textContent;
+    btn.addEventListener("click", async () => {
       try {
-        const response = await fetch(endpoint, {
-          method: "POST",
-          body: JSON.stringify(Object.fromEntries(new FormData(contactForm))),
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        });
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok || String(result.success) !== "true") {
-          // Keep FormSubmit's own explanation (e.g. "This form needs Activation")
-          const serviceError = new Error(result.message || response.statusText);
-          serviceError.fromService = Boolean(result.message);
-          throw serviceError;
-        }
-
-        const name = contactForm.elements.name.value.trim();
-        contactForm.reset();
-        showStatus(
-          "success",
-          "Thank you" + (name ? ", " + name : "") + ". Your message has been sent and we'll be in touch soon."
-        );
+        await navigator.clipboard.writeText(btn.dataset.copy);
+        btn.textContent = "Copied!";
       } catch (error) {
-        showStatus(
-          "error",
-          error.fromService
-            ? error.message
-            : "Sorry, your message couldn't be sent. Please try again or email us at contactus@synexisbi.com."
-        );
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Send message";
+        btn.textContent = btn.dataset.copy;
       }
+      setTimeout(() => {
+        btn.textContent = label;
+      }, 2000);
     });
-  }
+  });
 });

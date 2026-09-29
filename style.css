@@ -1108,162 +1108,68 @@ textarea:focus-visible {
   height: 18px;
 }
 
-/* Contact */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 32px;
-  align-items: start;
-}
-
-.panel {
-  padding: 32px;
+/* Contact — email card */
+.email-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 32px;
+  text-align: center;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
 }
 
-.panel h2 {
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-  font-weight: 700;
+.email-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  margin-bottom: 4px;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+.email-card__icon svg {
+  width: 28px;
+  height: 28px;
 }
 
-.form-group {
-  margin-bottom: 18px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 13px;
-  font-weight: 600;
+.email-card__address {
+  font-size: clamp(1.4rem, 4vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--text);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.15s ease;
 }
 
-.form-group label .optional {
-  font-weight: 400;
-  color: var(--muted);
+.email-card__address:hover {
+  color: var(--primary);
 }
 
-/* Inputs match the app's outlined text fields */
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 11px 12px;
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid #cbd5e1;
-  border-radius: var(--radius);
-  font-family: var(--font);
-  font-size: 0.95rem;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.form-group textarea {
-  resize: vertical;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: var(--muted);
-}
-
-.form-group input:hover,
-.form-group select:hover,
-.form-group textarea:hover {
-  border-color: var(--ink-soft);
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--ring);
-}
-
-.form-footer {
+.email-card__actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.email-card__hours {
+  display: inline-flex;
   align-items: center;
-  gap: 12px 20px;
-}
-
-.form-footer small {
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 14px;
   color: var(--muted);
 }
 
-.form-status {
-  display: none;
-  margin-top: 18px;
-  padding: 14px 16px;
-  border-radius: var(--radius);
-  font-size: 0.95rem;
-}
-
-.form-status.is-success,
-.form-status.is-error {
-  display: block;
-}
-
-.form-status.is-success {
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  color: #166534;
-}
-
-.form-status.is-error {
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-  color: #991b1b;
-}
-
-.detail-list {
-  list-style: none;
-  display: grid;
-  gap: 20px;
-}
-
-.detail-list li {
-  display: flex;
-  gap: 14px;
-}
-
-.detail-list .icon-tile {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-}
-
-.detail-list .icon-tile svg {
-  width: 20px;
-  height: 20px;
-}
-
-.detail-list strong {
-  display: block;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--muted);
-}
-
-.detail-list a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.detail-list a:hover {
-  text-decoration: underline;
+.email-card__hours svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* Scroll reveal (script.js adds .js-reveal to <html>) */
@@ -1361,8 +1267,7 @@ textarea:focus-visible {
 @media (max-width: 1024px) {
   .hero__grid,
   .page-hero__grid,
-  .split,
-  .contact-grid {
+  .split {
     grid-template-columns: 1fr;
     gap: 40px;
   }
@@ -1408,7 +1313,6 @@ textarea:focus-visible {
 
   .related,
   .steps,
-  .form-row,
   .footer__grid {
     grid-template-columns: 1fr;
   }
@@ -1417,8 +1321,8 @@ textarea:focus-visible {
     padding: 48px 24px;
   }
 
-  .panel {
-    padding: 24px;
+  .email-card {
+    padding: 36px 20px;
   }
 
   .hero__ctas .btn {

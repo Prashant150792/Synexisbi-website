@@ -6,7 +6,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
     <title>Contact | Synexis BI Solutions</title>
-    <meta name="description" content="Contact Synexis BI Solutions about pharmacovigilance services or a PV Signal Manager walkthrough." />
+    <meta name="description" content="Contact Synexis BI Solutions at contactus@synexisbi.com about pharmacovigilance services, a PV Signal Manager walkthrough or careers." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -44,81 +44,33 @@
           <span class="eyebrow">Contact</span>
           <h1>Let's talk</h1>
           <p class="page-hero__lede" style="max-width: 640px">
-            We'd love to hear from you. Reach out using the form below or our
-            contact details.
+            Questions about our services, PV Signal Manager or working with us?
+            Send us an email and we'll get back to you.
           </p>
         </div>
       </section>
 
-      <section class="section" style="padding-top: 16px">
-        <div class="wrap contact-grid">
-          <div class="panel">
-            <h2>Send us a message</h2>
-            <form id="contactForm" data-endpoint="https://formsubmit.co/ajax/contactus@synexisbi.com" novalidate>
-              <input type="hidden" name="_subject" value="New inquiry from synexisbi.com" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_captcha" value="false" />
-              <!-- Spam trap: real visitors never see or fill this field -->
-              <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none" />
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name">Your name</label>
-                  <input type="text" id="name" name="name" autocomplete="name" required />
-                </div>
-                <div class="form-group">
-                  <label for="email">Work email</label>
-                  <input type="email" id="email" name="email" autocomplete="email" required />
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="company">Company <span class="optional">(optional)</span></label>
-                  <input type="text" id="company" name="company" autocomplete="organization" />
-                </div>
-                <div class="form-group">
-                  <label for="topic">Topic</label>
-                  <select id="topic" name="topic">
-                    <option>General enquiry</option>
-                    <option>PV Signal Manager walkthrough</option>
-                    <option>Careers</option>
-                    <option>Product Development</option>
-                    <option>Systems Upgrade or Migration</option>
-                    <option>Data Analytics</option>
-                    <option>Data Mining</option>
-                    <option>Custom Reporting</option>
-                    <option>Vendor Management and Oversight</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="message">How can we help?</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
-              </div>
-              <div class="form-footer">
-                <button type="submit" class="btn btn--primary">Send message</button>
-              </div>
-              <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-            </form>
+      <section class="section" style="padding-top: 8px">
+        <div class="wrap">
+          <div class="email-card reveal">
+            <span class="icon-tile email-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+            <span class="eyebrow">Email us</span>
+            <a class="email-card__address" href="mailto:contactus@synexisbi.com">contactus@synexisbi.com</a>
+            <div class="email-card__actions">
+              <a href="mailto:contactus@synexisbi.com" class="btn btn--primary">Send an email <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              <button type="button" class="btn btn--ghost" data-copy="contactus@synexisbi.com">Copy address</button>
+            </div>
+            <p class="email-card__hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Mon–Fri, 9AM – 5PM</p>
           </div>
 
-          <div class="panel">
-            <h2>Contact details</h2>
-            <ul class="detail-list">
-              <li>
-                <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
-                <div>
-                  <strong>Email</strong>
-                  <a href="mailto:contactus@synexisbi.com">contactus@synexisbi.com</a>
-                </div>
-              </li>
-              <li>
-                <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-                <div>
-                  <strong>Business hours</strong>
-                  Mon–Fri, 9AM – 5PM
-                </div>
-              </li>
-            </ul>
+          <div class="section-heading reveal" style="margin-top: 72px; margin-bottom: 32px">
+            <h2>Start with a topic</h2>
+            <p>Pick one to open an email with the subject already filled in.</p>
+          </div>
+          <div class="related">
+            <a href="mailto:contactus@synexisbi.com?subject=Services%20enquiry"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span> Services enquiry</a>
+            <a href="mailto:contactus@synexisbi.com?subject=PV%20Signal%20Manager%20walkthrough"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span> PV Signal Manager walkthrough</a>
+            <a href="mailto:contactus@synexisbi.com?subject=Careers"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></span> Careers</a>
           </div>
         </div>
       </section>
