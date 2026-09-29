@@ -145,7 +145,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         const result = await response.json().catch(() => ({}));
         if (!response.ok || String(result.success) !== "true") {
-          throw new Error(result.message || response.statusText);
+          // Keep FormSubmit's own explanation (e.g. "This form needs Activation")
+          const serviceError = new Error(result.message || response.statusText);
+          serviceError.fromService = Boolean(result.message);
+          throw serviceError;
         }
 
         const name = contactForm.elements.name.value.trim();
@@ -157,7 +160,9 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch (error) {
         showStatus(
           "error",
-          "Sorry, your message couldn't be sent. Please try again or email us at contactus@synexisbi.com."
+          error.fromService
+            ? error.message
+            : "Sorry, your message couldn't be sent. Please try again or email us at contactus@synexisbi.com."
         );
       } finally {
         submitBtn.disabled = false;
