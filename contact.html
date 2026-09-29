@@ -54,8 +54,12 @@
         <div class="wrap contact-grid">
           <div class="panel">
             <h2>Send us a message</h2>
-            <!-- Set data-endpoint to your form service URL, e.g. https://formspree.io/f/xxxxxxx -->
-            <form id="contactForm" data-endpoint="" novalidate>
+            <form id="contactForm" data-endpoint="https://formsubmit.co/ajax/contactus@synexisbi.com" novalidate>
+              <input type="hidden" name="_subject" value="New inquiry from synexisbi.com" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <!-- Spam trap: real visitors never see or fill this field -->
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none" />
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Your name</label>
@@ -101,17 +105,10 @@
             <h2>Contact details</h2>
             <ul class="detail-list">
               <li>
-                <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>
-                <div>
-                  <strong>Address</strong>
-                  <a href="https://www.google.com/maps/search/?api=1&amp;query=43+Kings+Hwy+Haddonfield+NJ+08033" target="_blank" rel="noopener">43 Kings Hwy<br />Haddonfield, New Jersey 08033</a>
-                </div>
-              </li>
-              <li>
                 <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
                 <div>
                   <strong>Email</strong>
-                  <a href="/cdn-cgi/l/email-protection#215544404c615744535544595157400f424e4c"><span class="__cf_email__" data-cfemail="f581909498b583908781908d858394db969a98">[email&#160;protected]</span></a>
+                  <a href="mailto:contactus@synexisbi.com">contactus@synexisbi.com</a>
                 </div>
               </li>
               <li>
@@ -161,8 +158,7 @@
         <div>
           <h2>Contact</h2>
           <address>
-            43 Kings Hwy<br />
-            Haddonfield, NJ 08033<br />
+            <a href="mailto:contactus@synexisbi.com">contactus@synexisbi.com</a><br />
             Mon–Fri, 9AM – 5PM
           </address>
           <p style="margin-top: 12px"><a href="contact.html">Send us a message &rarr;</a></p>

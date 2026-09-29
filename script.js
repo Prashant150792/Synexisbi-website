@@ -105,8 +105,8 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach((el) => revealObserver.observe(el));
   }
 
-  // Contact form: posts to the form service set in data-endpoint
-  // (e.g. https://formspree.io/f/xxxxxxx). GitHub Pages can't run PHP.
+  // Contact form: posts JSON to the FormSubmit endpoint in data-endpoint,
+  // which emails the inquiry to contactus@synexisbi.com.
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!endpoint) {
         showStatus(
           "error",
-          "Online messages aren't available just yet. Please email us using the address on this page."
+          "Online messages aren't available just yet. Please email us at contactus@synexisbi.com."
         );
         return;
       }
@@ -137,10 +137,16 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         const response = await fetch(endpoint, {
           method: "POST",
-          body: new FormData(contactForm),
-          headers: { Accept: "application/json" },
+          body: JSON.stringify(Object.fromEntries(new FormData(contactForm))),
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
         });
-        if (!response.ok) throw new Error(response.statusText);
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || String(result.success) !== "true") {
+          throw new Error(result.message || response.statusText);
+        }
 
         const name = contactForm.elements.name.value.trim();
         contactForm.reset();
@@ -151,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch (error) {
         showStatus(
           "error",
-          "Sorry, your message couldn't be sent. Please try again or email us directly."
+          "Sorry, your message couldn't be sent. Please try again or email us at contactus@synexisbi.com."
         );
       } finally {
         submitBtn.disabled = false;
